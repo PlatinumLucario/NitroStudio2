@@ -27,13 +27,13 @@ namespace InstallerFolderPermissions {
 
             if (!string.IsNullOrEmpty(folder) && Directory.Exists(folder)) {
                 // Get your file's ACL
-                DirectorySecurity fsecurity = Directory.GetAccessControl(folder);
+                DirectorySecurity fsecurity = FileSystemAclExtensions.GetAccessControl(new DirectoryInfo(folder));
 
                 // Add the new rule to the ACL
                 fsecurity.AddAccessRule(writerule);
 
                 // Set the ACL back to the file
-                Directory.SetAccessControl(folder, fsecurity);
+                FileSystemAclExtensions.SetAccessControl(new DirectoryInfo(folder), fsecurity);
             }
 
             // Explicitly call the overriden method to properly return control to the installer

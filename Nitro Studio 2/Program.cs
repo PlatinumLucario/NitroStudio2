@@ -25,6 +25,7 @@ namespace NitroStudio2 {
             
             //Start.
             Application.EnableVisualStyles();
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Argument mode.
