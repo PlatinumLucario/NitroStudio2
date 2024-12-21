@@ -14,10 +14,12 @@ namespace NitroStudio2 {
     public partial class StreamPlayer : Form {
         public string Path;
         public MainWindow MainWindow;
+
+        // To be replaced with an even better stream player that doesn't rely on Windows Media Player
         public StreamPlayer(MainWindow m, string path, string name) {
             InitializeComponent();
             Text = "Stream Player - " + name + ".strm";
-            wmp.URL = path;
+            //wmp.URL = path;
             Path = path;
             MainWindow = m;
         }

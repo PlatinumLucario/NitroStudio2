@@ -14,8 +14,15 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Data;
 using System.Windows.Forms;
-
+/* Unmerged change from project 'Nitro Studio 2 (net6.0-windows)'
+Before:
 namespace Multimedia.UI
+After:
+namespace Multimedia.UI;
+*/
+
+
+namespace NitroStudio2
 {
     /// <summary>
     /// Specifies the orientation of the piano keys.
@@ -72,11 +79,11 @@ namespace Multimedia.UI
         RectShape
     }
 
-	/// <summary>
-	/// Represents a piano key.
-	/// </summary>
-	public class PianoKey : Control
-	{
+    /// <summary>
+    /// Represents a piano key.
+    /// </summary>
+    public class PianoKey : Control
+    {
         #region Constants
 
         // Number of points for L shaped piano keys.
@@ -119,7 +126,7 @@ namespace Multimedia.UI
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.Container components = null;
+        private Container components = null;
 
         #endregion
 
@@ -137,7 +144,7 @@ namespace Multimedia.UI
         #endregion
 
         #region Construction
-		
+
         /// <summary>
         /// Initializes a new instance of the PianoKey class.
         /// </summary>
@@ -150,10 +157,10 @@ namespace Multimedia.UI
             // Initialize properties.
             //
 
-            this.orientation = PianoKeyOrientation.Vertical;
-            this.shape = PianoKeyShape.LShape;
+            orientation = PianoKeyOrientation.Vertical;
+            shape = PianoKeyShape.LShape;
             Size = new Size(19, 51);
-        }        
+        }
 
         #endregion
 
@@ -165,13 +172,13 @@ namespace Multimedia.UI
         public void TurnKeyOn()
         {
             // If the key is not currently on.
-            if(!IsKeyOn())
+            if (!IsKeyOn())
             {
                 // Indicate that the key is now on.
                 keyOn = true;
-                
+
                 // If anyone is listening for changes in the key's state.
-                if(StateChanged != null)
+                if (StateChanged != null)
                 {
                     // Notify them that the key's state has changed.
                     StateChanged(this, new EventArgs());
@@ -188,13 +195,13 @@ namespace Multimedia.UI
         public void TurnKeyOff()
         {
             // If the key is currently on.
-            if(IsKeyOn())
+            if (IsKeyOn())
             {
                 // Indicate that the key is now off.
                 keyOn = false;
-                
+
                 // If anyone is listening for changes in the key's state.
-                if(StateChanged != null)
+                if (StateChanged != null)
                 {
                     // Notify them that the key's state has changed.
                     StateChanged(this, new EventArgs());
@@ -216,29 +223,29 @@ namespace Multimedia.UI
             return keyOn;
         }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if( components != null )
-					components.Dispose();
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                    components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Component Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify 
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-		}
-		#endregion
+        #region Component Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new Container();
+        }
+        #endregion
 
         /// <summary>
         /// Raises the MouseEnter event.
@@ -250,13 +257,13 @@ namespace Multimedia.UI
         {
             // If the left mouse button is pressed as the mouse enters the
             // piano key.
-            if(Control.MouseButtons == MouseButtons.Left)
+            if (MouseButtons == MouseButtons.Left)
             {
                 // Turn piano key on.
                 TurnKeyOn();
             }
 
-            base.OnMouseEnter (e);
+            base.OnMouseEnter(e);
         }
 
         /// <summary>
@@ -268,13 +275,13 @@ namespace Multimedia.UI
         protected override void OnMouseLeave(EventArgs e)
         {
             // If the piano key is on when the mouse leaves.
-            if(IsKeyOn())
+            if (IsKeyOn())
             {
                 // Turn key off.
                 TurnKeyOff();
             }
 
-            base.OnMouseLeave (e);
+            base.OnMouseLeave(e);
         }
 
         /// <summary>
@@ -290,7 +297,7 @@ namespace Multimedia.UI
         {
             TurnKeyOn();
 
-            base.OnMouseDown (e);
+            base.OnMouseDown(e);
         }
 
         /// <summary>
@@ -306,7 +313,7 @@ namespace Multimedia.UI
         {
             TurnKeyOff();
 
-            base.OnMouseUp (e);
+            base.OnMouseUp(e);
         }
 
         /// <summary>
@@ -322,10 +329,10 @@ namespace Multimedia.UI
         protected override void OnMouseMove(MouseEventArgs e)
         {
             // If the key is on.
-            if(IsKeyOn())
+            if (IsKeyOn())
             {
                 // If the mouse has moved outside of the key.
-                if(!Region.IsVisible(new Point(e.X, e.Y)))
+                if (!Region.IsVisible(new Point(e.X, e.Y)))
                 {
                     // Turn key off.
                     TurnKeyOff();
@@ -335,7 +342,7 @@ namespace Multimedia.UI
                 }
             }
 
-            base.OnMouseMove (e);
+            base.OnMouseMove(e);
         }
 
         /// <summary>
@@ -345,9 +352,9 @@ namespace Multimedia.UI
         /// A PaintEventArgs that contains the event data. 
         /// </param>
 		protected override void OnPaint(PaintEventArgs pe)
-		{
+        {
             // If the key is on.
-            if(IsKeyOn())
+            if (IsKeyOn())
             {
                 // Fill key with the key on color.
                 pe.Graphics.FillRegion(keyOnBrush, Region);
@@ -356,14 +363,14 @@ namespace Multimedia.UI
             else
             {
                 // Fill the key with the key off color.
-                pe.Graphics.FillRegion(keyOffBrush, Region);                
-            }           
+                pe.Graphics.FillRegion(keyOffBrush, Region);
+            }
 
             // Draw border
-            pe.Graphics.DrawPolygon(borderPen, points);             
+            pe.Graphics.DrawPolygon(borderPen, points);
 
-			// Calling the base class OnPaint
-			base.OnPaint(pe);
+            // Calling the base class OnPaint
+            base.OnPaint(pe);
         }
 
         /// <summary>
@@ -377,8 +384,8 @@ namespace Multimedia.UI
             // Change appearance to reflect the new size.
             InitPoints();
             CreateRegion();
-            
-            base.OnSizeChanged (e);
+
+            base.OnSizeChanged(e);
         }
 
         /// <summary>
@@ -388,18 +395,18 @@ namespace Multimedia.UI
         private void InitPoints()
         {
             // If the orientation is horizontal.
-            if(Orientation == PianoKeyOrientation.HorizontalLeft ||
+            if (Orientation == PianoKeyOrientation.HorizontalLeft ||
                 Orientation == PianoKeyOrientation.HorizontalRight)
             {
                 // Initialize points horizontally.
-                InitPointsHorz();                
+                InitPointsHorz();
             }
             // Else the orientation is vertical.
             else
             {
                 // Initialize points vertically.
                 InitPointsVert();
-            }            
+            }
         }
 
         /// <summary>
@@ -408,7 +415,7 @@ namespace Multimedia.UI
         private void InitPointsHorz()
         {
             // Determine shape and initialize points accordingly.
-            switch(shape)
+            switch (shape)
             {
                 case PianoKeyShape.LShape:
                     InitPointsHorzLShape();
@@ -435,7 +442,7 @@ namespace Multimedia.UI
             // By default, the points are initialized to the horizontal left 
             // orientation. If horizontal right orientation is used, flip the 
             // key horizontally so that it has the correct orientation.
-            if(Orientation == PianoKeyOrientation.HorizontalRight)
+            if (Orientation == PianoKeyOrientation.HorizontalRight)
             {
                 FlipHorizontally();
             }
@@ -447,7 +454,7 @@ namespace Multimedia.UI
         private void InitPointsVert()
         {
             // Determine shape and initialize points accordingly.
-            switch(shape)
+            switch (shape)
             {
                 case PianoKeyShape.LShape:
                     InitPointsVertLShape();
@@ -476,7 +483,7 @@ namespace Multimedia.UI
         /// Initialize points for horizontal L shaped piano keys.
         /// </summary>
         private void InitPointsHorzLShape()
-        { 
+        {
             points = new Point[PointCountLShape];
 
             points[0].X = 0;
@@ -497,7 +504,7 @@ namespace Multimedia.UI
             points[5].X = points[4].X;
             points[5].Y = points[0].Y;
 
-            points[6] = points[0];            
+            points[6] = points[0];
         }
 
         /// <summary>
@@ -535,7 +542,7 @@ namespace Multimedia.UI
             points[5].Y = Size.Height;
 
             points[6].X = points[0].X;
-            points[6].Y = points[0].Y;            
+            points[6].Y = points[0].Y;
         }
 
         /// <summary>
@@ -578,7 +585,7 @@ namespace Multimedia.UI
             points[7].X = 0;
             points[7].Y = points[6].Y;
 
-            points[8] = points[0];            
+            points[8] = points[0];
         }
 
         /// <summary>
@@ -612,7 +619,7 @@ namespace Multimedia.UI
             points[7].X = points[0].X;
             points[7].Y = points[2].Y;
 
-            points[8] = points[0];            
+            points[8] = points[0];
         }
 
         /// <summary>
@@ -642,7 +649,7 @@ namespace Multimedia.UI
         /// </summary>
         private void FlipHorizontally()
         {
-            for(int i = 0; i < points.Length; i++)
+            for (int i = 0; i < points.Length; i++)
             {
                 points[i].X = Size.Width - points[i].X;
             }
@@ -653,7 +660,7 @@ namespace Multimedia.UI
         /// </summary>
         private void FlipVertically()
         {
-            for(int i = 0; i < points.Length; i++)
+            for (int i = 0; i < points.Length; i++)
             {
                 points[i].Y = Size.Height - points[i].Y;
             }
@@ -663,25 +670,25 @@ namespace Multimedia.UI
         /// Create region for piano key based on initialized points.
         /// </summary>
         private void CreateRegion()
-        {  
+        {
             byte[] types = new byte[points.Length];
 
-            for(int i = 0; i < types.Length; i++)
+            for (int i = 0; i < types.Length; i++)
             {
                 types[i] = (byte)PathPointType.Line;
             }
 
             GraphicsPath path = new GraphicsPath(points, types);
 
-            Region = new Region(path); 
+            Region = new Region(path);
 
             Invalidate(Region);
-        }   
+        }
 
         #endregion
 
         #region Properties
-        
+
         /// <summary>
         /// Gets or sets a value indicating the horizontal or vertical 
         /// orientation of the piano key.
@@ -698,10 +705,10 @@ namespace Multimedia.UI
             set
             {
                 // If the current orientation is vertical.
-                if(orientation == PianoKeyOrientation.Vertical)
+                if (orientation == PianoKeyOrientation.Vertical)
                 {
                     // If the new orientation if horizontal left or right.
-                    if(value == PianoKeyOrientation.HorizontalLeft ||
+                    if (value == PianoKeyOrientation.HorizontalLeft ||
                         value == PianoKeyOrientation.HorizontalRight)
                     {
                         // Change orientation.
@@ -711,12 +718,12 @@ namespace Multimedia.UI
                         // vertical orientation to a horizontal one.
                         Size = new Size(Height, Width);
                     }
-                }  
+                }
                 // Else the current orientation is horizontal left or right.
                 else
                 {
                     // If the new orientation is vertical.
-                    if(value == PianoKeyOrientation.Vertical)
+                    if (value == PianoKeyOrientation.Vertical)
                     {
                         // Change orientation.
                         orientation = value;
@@ -764,7 +771,7 @@ namespace Multimedia.UI
                 CreateRegion();
             }
         }
-        
+
         /// <summary>
         /// Gets or sets the color used to draw the piano key when it is on.
         /// </summary>
@@ -782,13 +789,13 @@ namespace Multimedia.UI
             {
                 keyOnBrush.Color = value;
 
-                if(IsKeyOn())
+                if (IsKeyOn())
                 {
                     Invalidate(Region);
                 }
             }
-        }  
-        
+        }
+
         /// <summary>
         /// Gets or sets the color used to paint the piano key when it is off.
         /// </summary>
@@ -806,7 +813,7 @@ namespace Multimedia.UI
             {
                 keyOffBrush.Color = value;
 
-                if(!IsKeyOn())
+                if (!IsKeyOn())
                 {
                     Invalidate(Region);
                 }

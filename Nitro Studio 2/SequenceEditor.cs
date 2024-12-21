@@ -3,8 +3,9 @@ using GotaSequenceLib.Playback;
 using GotaSoundIO.IO;
 using GotaSoundIO.Sound;
 using NitroFileLoader;
+using NitroStudio2.FindReplaceDialog.FindReplace;
+using NitroStudio2.FindReplaceDialog.GoTo;
 using ScintillaNET;
-using ScintillaNET_FindReplaceDialog;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,7 +16,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static GotaSequenceLib.Playback.Player;
 
-namespace NitroStudio2 {
+namespace NitroStudio2
+{
 
     /// <summary>
     /// Sequence editor.
@@ -251,7 +253,8 @@ namespace NitroStudio2 {
             sequenceEditor.Styles[Style.LineNumber].ForeColor = IntToColor(FORE_COLOR);
             sequenceEditor.Styles[Style.IndentGuide].ForeColor = IntToColor(FORE_COLOR);
             sequenceEditor.Styles[Style.IndentGuide].BackColor = IntToColor(BACK_COLOR);
-            sequenceEditor.Lexer = Lexer.Container;
+            //sequenceEditor.Lexer = Lexer.Container;
+            sequenceEditor.LexerName = Container.ToString(); // Uncomment the line above if LexerName runs into problems.
             sequenceEditor.StyleNeeded += new EventHandler<StyleNeededEventArgs>(this.SEQ_StyleNeeded);
             //sequenceEditor.UpdateUI += new EventHandler<UpdateUIEventArgs>(this.SEQ_Changed);
             sequenceEditor.TextChanged += new EventHandler(this.SEQ_ChangedText);
