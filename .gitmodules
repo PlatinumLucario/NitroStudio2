@@ -1,0 +1,9 @@
+[submodule "GotaSoundIO"]
+	path = GotaSoundIO
+	url = https://github.com/PlatinumLucario/GotaSoundIO.git
+[submodule "GotaSoundBank"]
+	path = GotaSoundBank
+	url = https://github.com/PlatinumLucario/GotaSoundBank.git
+[submodule "GotaSequenceLib"]
+	path = GotaSequenceLib
+	url = https://github.com/PlatinumLucario/GotaSequenceLib.git
