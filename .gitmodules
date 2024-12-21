@@ -7,3 +7,9 @@
 [submodule "GotaSequenceLib"]
 	path = GotaSequenceLib
 	url = https://github.com/PlatinumLucario/GotaSequenceLib.git
+[submodule "DLS2"]
+	path = DLS2
+	url = https://github.com/PlatinumLucario/DLS2.git
+[submodule "SoundFont2"]
+	path = SoundFont2
+	url = https://github.com/PlatinumLucario/SoundFont2.git
