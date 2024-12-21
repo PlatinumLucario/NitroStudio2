@@ -5,9 +5,9 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GotaSequenceLib\GotaSequenceLib.csproj" />
-    <ProjectReference Include="..\..\GotaSoundBank\GotaSoundBank.csproj" />
-    <ProjectReference Include="..\..\GotaSoundIO\GotaSoundIO.csproj" />
-    <ProjectReference Include="..\..\SoundFont2\SoundFont2\SoundFont2.csproj" />
+    <ProjectReference Include="..\GotaSequenceLib\GotaSequenceLib.csproj" />
+    <ProjectReference Include="..\GotaSoundBank\GotaSoundBank.csproj" />
+    <ProjectReference Include="..\GotaSoundIO\GotaSoundIO.csproj" />
+    <ProjectReference Include="..\SoundFont2\SoundFont2\SoundFont2.csproj" />
   </ItemGroup>
 </Project>

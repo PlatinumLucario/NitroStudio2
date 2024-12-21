@@ -17,11 +17,11 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NitroStudio2Installer", "Ni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstallerFolderPermissions", "InstallerFolderPermissions\InstallerFolderPermissions.csproj", "{DBF81EB2-7016-465B-8A95-3F376E439DB0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoundFont2", "..\SoundFont2\SoundFont2\SoundFont2.csproj", "{9A2F7B36-4083-45C4-ADC1-EFD2808AC914}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndianBinaryIO", "..\SoundFont2\EndianBinaryIO\Source\EndianBinaryIO.csproj", "{6FD7070E-781B-4069-901C-ED88E0DC6D2C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanford.Multimedia.Midi.Core", "Sanford.Multimedia.Midi.Core\Sanford.Multimedia.Midi.Core.csproj", "{99C0F98D-56CE-4AE7-9514-551DCE3B1944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLS2", "DLS2\DLS2\DLS2.csproj", "{AB2FC2C7-A22B-4E47-882F-C16AA6BA1BCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundFont2", "SoundFont2\SoundFont2\SoundFont2.csproj", "{6C3C703D-2411-46E3-A398-BC4D7E37880B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,18 +57,18 @@ Global
 		{DBF81EB2-7016-465B-8A95-3F376E439DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBF81EB2-7016-465B-8A95-3F376E439DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBF81EB2-7016-465B-8A95-3F376E439DB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A2F7B36-4083-45C4-ADC1-EFD2808AC914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A2F7B36-4083-45C4-ADC1-EFD2808AC914}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A2F7B36-4083-45C4-ADC1-EFD2808AC914}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A2F7B36-4083-45C4-ADC1-EFD2808AC914}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FD7070E-781B-4069-901C-ED88E0DC6D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FD7070E-781B-4069-901C-ED88E0DC6D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FD7070E-781B-4069-901C-ED88E0DC6D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FD7070E-781B-4069-901C-ED88E0DC6D2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99C0F98D-56CE-4AE7-9514-551DCE3B1944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99C0F98D-56CE-4AE7-9514-551DCE3B1944}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99C0F98D-56CE-4AE7-9514-551DCE3B1944}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99C0F98D-56CE-4AE7-9514-551DCE3B1944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2FC2C7-A22B-4E47-882F-C16AA6BA1BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2FC2C7-A22B-4E47-882F-C16AA6BA1BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2FC2C7-A22B-4E47-882F-C16AA6BA1BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2FC2C7-A22B-4E47-882F-C16AA6BA1BCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3C703D-2411-46E3-A398-BC4D7E37880B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3C703D-2411-46E3-A398-BC4D7E37880B}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{6C3C703D-2411-46E3-A398-BC4D7E37880B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3C703D-2411-46E3-A398-BC4D7E37880B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
