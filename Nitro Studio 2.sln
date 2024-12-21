@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitro Studio 2", "Nitro Stu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NitroFileLoader", "NitroFileLoader\NitroFileLoader.csproj", "{132D5DA0-BD98-4FCB-9A9C-73556C16B2C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSoundIO", "..\GotaSoundIO\GotaSoundIO.csproj", "{F0BCD085-9DC4-4B22-B791-C725CA8E46F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSoundIO", "GotaSoundIO\GotaSoundIO.csproj", "{F0BCD085-9DC4-4B22-B791-C725CA8E46F6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSequenceLib", "..\GotaSequenceLib\GotaSequenceLib.csproj", "{D06E248A-EF7A-4F1E-9A71-76204D61FF80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSequenceLib", "GotaSequenceLib\GotaSequenceLib.csproj", "{D06E248A-EF7A-4F1E-9A71-76204D61FF80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSoundBank", "..\GotaSoundBank\GotaSoundBank.csproj", "{2642E217-5595-4E4B-9B6D-F5CFD937EB25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSoundBank", "GotaSoundBank\GotaSoundBank.csproj", "{2642E217-5595-4E4B-9B6D-F5CFD937EB25}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NitroStudio2Installer", "NitroStudio2Installer\NitroStudio2Installer.vdproj", "{BD16D3DB-EEE2-40D1-B1D9-B28F60BDBF62}"
 EndProject
@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoundFont2", "..\SoundFont2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndianBinaryIO", "..\SoundFont2\EndianBinaryIO\Source\EndianBinaryIO.csproj", "{6FD7070E-781B-4069-901C-ED88E0DC6D2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanford.Multimedia.Midi.Core", "..\Sanford.Multimedia.Midi.Core\Sanford.Multimedia.Midi.Core.csproj", "{99C0F98D-56CE-4AE7-9514-551DCE3B1944}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanford.Multimedia.Midi.Core", "Sanford.Multimedia.Midi.Core\Sanford.Multimedia.Midi.Core.csproj", "{99C0F98D-56CE-4AE7-9514-551DCE3B1944}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
