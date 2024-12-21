@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSequenceLib", "..\GotaS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSoundBank", "..\GotaSoundBank\GotaSoundBank.csproj", "{2642E217-5595-4E4B-9B6D-F5CFD937EB25}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NitroStudio2Installer", "NitroStudio2Installer\NitroStudio2Installer.vdproj", "{BD16D3DB-EEE2-40D1-B1D9-B28F60BDBF62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotaSoundBank", "..\GotaSoundBank\GotaSoundBank.csproj", "{BADEC956-F29D-45BB-B4B4-5E9A3EE465DC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstallerFolderPermissions", "InstallerFolderPermissions\InstallerFolderPermissions.csproj", "{DBF81EB2-7016-465B-8A95-3F376E439DB0}"
 EndProject
@@ -72,6 +72,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {92AD1E7F-9A75-4B4E-9721-265524A1A944}
+		SolutionGuid = {4439F3A6-7B14-4C97-ADDF-D55DE9558F32}
 	EndGlobalSection
 EndGlobal
