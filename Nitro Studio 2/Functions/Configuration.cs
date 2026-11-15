@@ -15,7 +15,16 @@ namespace NitroStudio2.Functions
     public class Configuration
     {
         string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NitroStudio2\\config.ini";
-        public Dictionary<string, string> Settings = new Dictionary<string, string>();
+        public Dictionary<string, string> Settings = new Dictionary<string, string> {
+            { "version", Global.version},
+            { "writeNames", "true" },
+            { "importTool", "NitroStudio" },
+            { "exportTool", "NitroStudio" },
+            { "inputMidiDevice", "0" },
+            { "outputWaveDevice", ConfigurationDefaults.GetDefaultWaveDevice()},
+            { "viewHeap", "hex"},
+            { "showVirtualPiano", "true" },
+        };
 
         public void ReadConfig(StreamReader r)
         {
@@ -29,7 +38,13 @@ namespace NitroStudio2.Functions
                         if (!l.StartsWith("#"))
                         {
                             string[] setting = l.Replace(" ", "").Replace("\t", "").Split('=');
-                            Settings.Add(setting.First(), setting.Last().Split('#').First());
+                            if (Settings.ContainsKey(setting.First()))
+                            {
+                                Settings[setting.First()] = setting.Last().Split('#').First();
+                            } else
+                            {
+                                Settings.Add(setting.First(), setting.Last().Split('#').First());
+                            }
                         }
                     }
                 }

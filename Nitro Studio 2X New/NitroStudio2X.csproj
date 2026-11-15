@@ -1,0 +1,30 @@
+﻿<Project Sdk="Eto.Forms/2.13.0">
+
+  <!--
+    Set the BuildPlatform property to the Eto platform you wish to build for.
+    The default is the platform you are building on.
+    Valid values: Wpf, Windows, Mac64, MacOS, Gtk, Direct2D
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>NitroStudio2X</RootNamespace>
+
+    <UseWinForms>True</UseWinForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="TestingForms\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DLS2\DLS2\DLS2.csproj" />
+    <ProjectReference Include="..\GotaSequenceLib\GotaSequenceLib.csproj" />
+    <ProjectReference Include="..\GotaSoundBank\GotaSoundBank.csproj" />
+    <ProjectReference Include="..\GotaSoundIO\GotaSoundIO.csproj" />
+    <ProjectReference Include="..\NitroFileLoader\NitroFileLoader.csproj" />
+    <ProjectReference Include="..\Sanford.Multimedia.Midi.Core\Sanford.Multimedia.Midi.Core.csproj" />
+    <ProjectReference Include="..\SoundFont2\SoundFont2\SoundFont2.csproj" />
+  </ItemGroup>
+
+</Project>

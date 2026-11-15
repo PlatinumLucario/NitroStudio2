@@ -29,13 +29,13 @@
             bPlay = new System.Windows.Forms.Button();
             bStop = new System.Windows.Forms.Button();
             bPause = new System.Windows.Forms.Button();
-            waveViewer1 = new NAudio.Gui.WaveViewer();
+            positionInSong = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             SuspendLayout();
             // 
             // trackBar1
             // 
-            trackBar1.Location = new System.Drawing.Point(12, 273);
+            trackBar1.Location = new System.Drawing.Point(12, 35);
             trackBar1.Name = "trackBar1";
             trackBar1.Size = new System.Drawing.Size(713, 45);
             trackBar1.TabIndex = 1;
@@ -43,7 +43,7 @@
             // 
             // bPlay
             // 
-            bPlay.Location = new System.Drawing.Point(357, 324);
+            bPlay.Location = new System.Drawing.Point(357, 86);
             bPlay.Name = "bPlay";
             bPlay.Size = new System.Drawing.Size(75, 30);
             bPlay.TabIndex = 2;
@@ -53,7 +53,7 @@
             // 
             // bStop
             // 
-            bStop.Location = new System.Drawing.Point(276, 324);
+            bStop.Location = new System.Drawing.Point(276, 86);
             bStop.Name = "bStop";
             bStop.Size = new System.Drawing.Size(75, 30);
             bStop.TabIndex = 3;
@@ -63,7 +63,7 @@
             // 
             // bPause
             // 
-            bPause.Location = new System.Drawing.Point(438, 324);
+            bPause.Location = new System.Drawing.Point(438, 86);
             bPause.Name = "bPause";
             bPause.Size = new System.Drawing.Size(75, 30);
             bPause.TabIndex = 4;
@@ -71,25 +71,21 @@
             bPause.UseVisualStyleBackColor = true;
             bPause.Click += bPause_Click_1;
             // 
-            // waveViewer1
+            // positionInSong
             // 
-            waveViewer1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            waveViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            waveViewer1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            waveViewer1.Location = new System.Drawing.Point(12, 12);
-            waveViewer1.Name = "waveViewer1";
-            waveViewer1.SamplesPerPixel = 128;
-            waveViewer1.Size = new System.Drawing.Size(713, 255);
-            waveViewer1.StartPosition = 0L;
-            waveViewer1.TabIndex = 5;
-            waveViewer1.WaveStream = null;
+            positionInSong.Location = new System.Drawing.Point(12, 9);
+            positionInSong.Name = "positionInSong";
+            positionInSong.Size = new System.Drawing.Size(713, 23);
+            positionInSong.TabIndex = 5;
+            positionInSong.Text = "label1";
+            positionInSong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // StreamPlayer
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(737, 366);
-            Controls.Add(waveViewer1);
+            ClientSize = new System.Drawing.Size(737, 128);
+            Controls.Add(positionInSong);
             Controls.Add(bPause);
             Controls.Add(bStop);
             Controls.Add(bPlay);
@@ -109,7 +105,7 @@
         private System.Windows.Forms.Button bPlay;
         private System.Windows.Forms.Button bStop;
         private System.Windows.Forms.Button bPause;
-        private NAudio.Gui.WaveViewer waveViewer1;
+        private System.Windows.Forms.Label positionInSong;
 
         #endregion
 

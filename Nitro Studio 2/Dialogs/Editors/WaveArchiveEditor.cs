@@ -6,6 +6,7 @@ using NitroFileLoader;
 using NitroStudio2.Functions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -179,6 +180,7 @@ namespace NitroStudio2.Dialogs.Editors {
             kermalisPosition.Maximum = (int)Player.GetLength();
             kermalisPosition.TickFrequency = kermalisPosition.Maximum / 10;
             kermalisPosition.LargeChange = kermalisPosition.Maximum / 20;
+            Debug.WriteLine(WA.Waves[tree.SelectedNode.Index].PreferredEncoding());
             Player.Play();
         }
 
