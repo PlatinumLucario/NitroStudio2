@@ -9,7 +9,7 @@ namespace NitroStudio2.Functions
 {
     public static class Global
     {
-        public static string version = "26.10";
+        public static string version = "27.01-beta1";
         public static Configuration c = new Configuration();
     }
     public class Configuration
