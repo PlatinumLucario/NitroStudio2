@@ -69,7 +69,7 @@ jobs:
 
     # Clone Other Libraries
     - name: Grab dependencies
-      run: git clone https://github.com/NitroStudio2X/GotaSoundIO && https://github.com/NitroStudio2X/GotaSequenceLib && https://github.com/NitroStudio2X/GotaSoundBank 
+      run: git clone https://github.com/NitroStudio2X/GotaSoundIO && git clone https://github.com/NitroStudio2X/GotaSequenceLib && git clone https://github.com/NitroStudio2X/GotaSoundBank 
     
     # Install the .NET Core workload
     - name: Install .NET Core
