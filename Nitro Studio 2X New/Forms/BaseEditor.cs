@@ -6,6 +6,8 @@ using NitroFileLoader;
 using NitroStudio2X.Functions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -13,34 +15,65 @@ namespace NitroStudio2X.Forms
 {
 	public partial class BaseEditor : Form
 	{
+        // For the Engine
         SoundArchive SA = new SoundArchive();
         Configuration Config = new Configuration();
         Mixer Mixer;
         Player Player;
 
+        int sseq_start = 0;
+        int ssar_start = 0;
+        int sbnk_start = 0;
+        int swar_start = 0;
+        int sply_start = 0;
+        int sgrp_start = 0;
+        int stpl_start = 0;
+        int strm_start = 0;
+
         // Controls
-        StackLayout stackLayout = new StackLayout();
-		ListBox itemsList = new ListBox();
+        TreeGridView EntryList = new TreeGridView();
+        TreeGridItemCollection Items = new TreeGridItemCollection();
+
+        TreeGridItem sseqList = new TreeGridItem(new string[] { "Sequences" });
+        TreeGridItem ssarList = new TreeGridItem(new string[] { "Sequence Archives" });
+        TreeGridItem sbnkList = new TreeGridItem(new string[] { "Instrument Banks" });
+        TreeGridItem swarList = new TreeGridItem(new string[] {"Wave Archives" });
+        TreeGridItem splyList = new TreeGridItem(new string[] { "Sequence Players" });
+        TreeGridItem sgrpList = new TreeGridItem(new string[] { "Groups" });
+        TreeGridItem stplList = new TreeGridItem(new string[] { "Stream Players" });
+        TreeGridItem strmList = new TreeGridItem(new string[] { "Streams" });
+
+
         public BaseEditor()
 		{
+            // Generate Headers
+            GridColumn c1 = new GridColumn();
+            c1.HeaderText = "ID";
+            c1.Editable = false;
+            c1.DataCell = new TextBoxCell(0);
+            EntryList.Columns.Add(c1);
+
+            // Initialise
+            Items.Add(sseqList);
+            Items.Add(ssarList);
+            Items.Add(sbnkList);
+            Items.Add(swarList);
+            Items.Add(splyList);
+            Items.Add(sgrpList);
+            Items.Add(stplList);
+            Items.Add(strmList);
+
+            EntryList.DataStore = Items;
+
+
+
             // Handlers to safely close
             this.Load += BaseEditor_Load;
             this.Closed += BaseEditor_Closed;
 
-			// Stack Layout
-			stackLayout.Items.Add("Hello World");
-			stackLayout.Items.Add(itemsList);
-			stackLayout.Width = 500;
-			stackLayout.Orientation = Orientation.Horizontal;
-			stackLayout.Padding = 10;
-
-            // TreeView
-            itemsList.Width = 750;
-            itemsList.Height = 660;
-
 			Title = "Nitro Studio 2X (Dev)";
 			MinimumSize = new Size(1000, 670);
-			Content = stackLayout;
+			Content = EntryList;
 			// create a few commands that can be used for the menu and toolbar
 
 			var quitCommand = new Command { MenuText = "Quit", Shortcut = Application.Instance.CommonModifier | Keys.Q };
@@ -124,20 +157,99 @@ namespace NitroStudio2X.Forms
 
         private void BtnTestPlay_Executed(object sender, EventArgs e)
         {
-            var s = SA.Sequences.Where(x => x.Index == itemsList.SelectedIndex).FirstOrDefault();
+            if(Player.State == PlayerState.Playing)
+            {
+                Player.Stop();
+            }
+            
+            var s = SA.Sequences.Where(x => x.Index == GetActualID(EntryList.SelectedRow, "sseq")).FirstOrDefault();
             try { Player.PrepareForSong(new PlayableBank[] { s.Bank.File }, s.Bank.GetAssociatedWaves()); } catch { MessageBox.Show("Sequence entry has no valid bank hooked up to it!"); return; }
             s.File.ReadCommandData();
             Player.LoadSong(s.File.Commands);
             Player.Play();
+            var x = (TreeGridItem)(EntryList.SelectedItem.Parent);
+            MessageBox.Show(x.Values.First().ToString());
+        }
+
+        private int GetActualID(int id, string format)
+        {
+            switch(format.ToLower())
+            {
+                case "sseq":
+                    return SA.Sequences[id - 1].Index;
+                    break;
+            }
+            return -1;
         }
 
         private void UpdateListing()
 		{
-			itemsList.Items.Clear();
-			foreach(var f in SA.Sequences) {
-				itemsList.Items.Add(f.Name);
+            Items.Clear();
+			sseqList.Children.Clear();
+            ssarList.Children.Clear();
+            sbnkList.Children.Clear();
+            swarList.Children.Clear();
+            splyList.Children.Clear();
+            sgrpList.Children.Clear();
+            stplList.Children.Clear();
+            strmList.Children.Clear();
+            int i = 0;
+            foreach (var f in SA.Sequences) {
+                sseq_start = i;
+				sseqList.Children.Add(new TreeGridItem(new string[] {"[" + f.Index.ToString() + "] " + f.Name }));
+                i++;
 			}
-		}
+            foreach (var f in SA.SequenceArchives)
+            {
+                ssar_start = i;
+                ssarList.Children.Add(new TreeGridItem(new string[] { "[" + f.Index.ToString() + "] " + f.Name }));
+                i++;
+            }
+            foreach (var f in SA.Banks)
+            {
+                sbnk_start = i;
+                sbnkList.Children.Add(new TreeGridItem(new string[] {"[" + f.Index.ToString() + "] " + f.Name }));
+                i++;
+            }
+            foreach (var f in SA.WaveArchives)
+            {
+                swar_start = i;
+                swarList.Children.Add(new TreeGridItem(new string[] { "[" + f.Index.ToString() + "] " + f.Name }));
+                i++;
+            }
+            foreach (var f in SA.Players)
+            {
+                sply_start = i;
+                splyList.Children.Add(new TreeGridItem(new string[] {"[" + f.Index.ToString() + "] " + f.Name }));
+                i++;
+            }
+            foreach (var f in SA.Groups)
+            {
+                sgrp_start = i;
+                sgrpList.Children.Add(new TreeGridItem(new string[] {"[" + f.Index.ToString() + "] " + f.Name }));
+                i++;
+            }
+            foreach (var f in SA.StreamPlayers)
+            {
+                stpl_start = i;
+                stplList.Children.Add(new TreeGridItem(new string[] {"[" + f.Index.ToString() + "] " + f.Name }));
+                i++;
+            }
+            foreach (var f in SA.Streams)
+            {
+                strm_start = i;
+                strmList.Children.Add(new TreeGridItem(new string[] {"[" + f.Index.ToString() + "] " + f.Name }));
+                i++;
+            }
+            Items.Add(sseqList);
+            Items.Add(ssarList);
+            Items.Add(sbnkList);
+            Items.Add(swarList);
+            Items.Add(splyList);
+            Items.Add(sgrpList);
+            Items.Add(stplList);
+            Items.Add(strmList);
+        }
 
         private void BtnOpen_Executed(object sender, EventArgs e)
         {

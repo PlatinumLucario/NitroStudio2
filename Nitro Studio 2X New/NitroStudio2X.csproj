@@ -14,10 +14,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="TestingForms\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DLS2\DLS2\DLS2.csproj" />
     <ProjectReference Include="..\GotaSequenceLib\GotaSequenceLib.csproj" />
     <ProjectReference Include="..\GotaSoundBank\GotaSoundBank.csproj" />
