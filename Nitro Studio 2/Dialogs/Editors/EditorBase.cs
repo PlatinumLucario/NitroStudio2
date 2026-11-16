@@ -10,6 +10,7 @@ using ScintillaNET;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -172,8 +173,6 @@ namespace NitroStudio2.Dialogs.Editors
         private PianoKey pkeyB5;
         private PianoKey pkeyC8;
         public ToolStripMenuItem toolsToolStripMenuItem;
-        private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStripMenuItem getHelpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem aboutNitroStudio2ToolStripMenuItem;
         private ToolStripMenuItem bankGeneratorToolStripMenuItem;
@@ -432,6 +431,7 @@ namespace NitroStudio2.Dialogs.Editors
         public ToolStripMenuItem viewHeapBtn;
         private ToolStripSeparator toolStripSeparator2;
         public ToolStripMenuItem viewHeapUsageBtn2;
+        private ToolStripMenuItem getHelpToolStripMenuItem;
 
         /// <summary>
         /// Main window.
@@ -639,6 +639,7 @@ namespace NitroStudio2.Dialogs.Editors
             blankFileToolStripMenuItem = new ToolStripMenuItem();
             importFileToolStripMenuItem = new ToolStripMenuItem();
             exportFileToolStripMenuItem = new ToolStripMenuItem();
+            importFromExternalSDATToolStripMenuItem = new ToolStripMenuItem();
             toolsToolStripMenuItem = new ToolStripMenuItem();
             sequenceEditorToolStripMenuItem = new ToolStripMenuItem();
             sequenceArchiveEditorToolStripMenuItem = new ToolStripMenuItem();
@@ -651,14 +652,12 @@ namespace NitroStudio2.Dialogs.Editors
             sF2ToDLSToolStripMenuItem = new ToolStripMenuItem();
             dLSToSF2ToolStripMenuItem = new ToolStripMenuItem();
             batchExportMIDIDLSSF2ToolStripMenuItem = new ToolStripMenuItem();
-            importFromExternalSDATToolStripMenuItem = new ToolStripMenuItem();
             viewHeapBtn = new ToolStripMenuItem();
             exportInfoTB = new ToolStripMenuItem();
             sdblExportBtn = new ToolStripMenuItem();
             sExportButton = new ToolStripMenuItem();
-            helpToolStripMenuItem = new ToolStripMenuItem();
-            getHelpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
+            getHelpToolStripMenuItem = new ToolStripMenuItem();
             aboutNitroStudio2ToolStripMenuItem = new ToolStripMenuItem();
             splitContainer1 = new SplitContainer();
             fileSizePanel = new Panel();
@@ -1135,7 +1134,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, editToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem, aboutToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, editToolStripMenuItem, toolsToolStripMenuItem, aboutToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Size = new Size(984, 24);
@@ -1153,7 +1152,8 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             newToolStripMenuItem.Image = Properties.Resources.New;
             newToolStripMenuItem.Name = "newToolStripMenuItem";
-            newToolStripMenuItem.Size = new Size(116, 22);
+            newToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
+            newToolStripMenuItem.Size = new Size(186, 22);
             newToolStripMenuItem.Text = "New";
             newToolStripMenuItem.Click += newToolStripMenuItem_Click;
             // 
@@ -1161,7 +1161,8 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             openToolStripMenuItem.Image = Properties.Resources.Open;
             openToolStripMenuItem.Name = "openToolStripMenuItem";
-            openToolStripMenuItem.Size = new Size(116, 22);
+            openToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+            openToolStripMenuItem.Size = new Size(186, 22);
             openToolStripMenuItem.Text = "Open";
             openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
@@ -1169,7 +1170,8 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             saveToolStripMenuItem.Image = Properties.Resources.Save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(116, 22);
+            saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+            saveToolStripMenuItem.Size = new Size(186, 22);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
@@ -1177,7 +1179,8 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             saveAsToolStripMenuItem.Image = Properties.Resources.Save_As;
             saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            saveAsToolStripMenuItem.Size = new Size(116, 22);
+            saveAsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
+            saveAsToolStripMenuItem.Size = new Size(186, 22);
             saveAsToolStripMenuItem.Text = "Save As";
             saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
             // 
@@ -1185,7 +1188,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             closeToolStripMenuItem.Image = Properties.Resources.Close;
             closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            closeToolStripMenuItem.Size = new Size(116, 22);
+            closeToolStripMenuItem.Size = new Size(186, 22);
             closeToolStripMenuItem.Text = "Close";
             closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             // 
@@ -1193,20 +1196,21 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             settingsButton.Image = Properties.Resources.New;
             settingsButton.Name = "settingsButton";
-            settingsButton.Size = new Size(116, 22);
+            settingsButton.Size = new Size(186, 22);
             settingsButton.Text = "Settings";
             // 
             // quitToolStripMenuItem
             // 
             quitToolStripMenuItem.Image = Properties.Resources.Quit;
             quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            quitToolStripMenuItem.Size = new Size(116, 22);
+            quitToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Q;
+            quitToolStripMenuItem.Size = new Size(186, 22);
             quitToolStripMenuItem.Text = "Quit";
             quitToolStripMenuItem.Click += quitToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
-            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { blankFileToolStripMenuItem, importFileToolStripMenuItem, exportFileToolStripMenuItem });
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { blankFileToolStripMenuItem, importFileToolStripMenuItem, exportFileToolStripMenuItem, importFromExternalSDATToolStripMenuItem });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(39, 20);
             editToolStripMenuItem.Text = "Edit";
@@ -1215,7 +1219,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             blankFileToolStripMenuItem.Image = Properties.Resources.Rename;
             blankFileToolStripMenuItem.Name = "blankFileToolStripMenuItem";
-            blankFileToolStripMenuItem.Size = new Size(131, 22);
+            blankFileToolStripMenuItem.Size = new Size(214, 22);
             blankFileToolStripMenuItem.Text = "Blank File";
             blankFileToolStripMenuItem.Click += blankFileToolStripMenuItem_Click;
             // 
@@ -1223,7 +1227,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             importFileToolStripMenuItem.Image = Properties.Resources.Import;
             importFileToolStripMenuItem.Name = "importFileToolStripMenuItem";
-            importFileToolStripMenuItem.Size = new Size(131, 22);
+            importFileToolStripMenuItem.Size = new Size(214, 22);
             importFileToolStripMenuItem.Text = "Import File";
             importFileToolStripMenuItem.Click += importFileToolStripMenuItem_Click;
             // 
@@ -1231,13 +1235,21 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             exportFileToolStripMenuItem.Image = Properties.Resources.Export;
             exportFileToolStripMenuItem.Name = "exportFileToolStripMenuItem";
-            exportFileToolStripMenuItem.Size = new Size(131, 22);
+            exportFileToolStripMenuItem.Size = new Size(214, 22);
             exportFileToolStripMenuItem.Text = "Export File";
             exportFileToolStripMenuItem.Click += exportFileToolStripMenuItem_Click;
             // 
+            // importFromExternalSDATToolStripMenuItem
+            // 
+            importFromExternalSDATToolStripMenuItem.Image = Properties.Resources.Import;
+            importFromExternalSDATToolStripMenuItem.Name = "importFromExternalSDATToolStripMenuItem";
+            importFromExternalSDATToolStripMenuItem.Size = new Size(214, 22);
+            importFromExternalSDATToolStripMenuItem.Text = "Import from External SDAT";
+            importFromExternalSDATToolStripMenuItem.Visible = false;
+            // 
             // toolsToolStripMenuItem
             // 
-            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sequenceEditorToolStripMenuItem, sequenceArchiveEditorToolStripMenuItem, bankEditorToolStripMenuItem, waveArchiveEditorToolStripMenuItem, bankGeneratorToolStripMenuItem, creaveWaveToolStripMenuItem, createStreamToolStripMenuItem, exportSDKProjectToolStripMenuItem, sF2ToDLSToolStripMenuItem, dLSToSF2ToolStripMenuItem, batchExportMIDIDLSSF2ToolStripMenuItem, importFromExternalSDATToolStripMenuItem, viewHeapBtn, exportInfoTB });
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sequenceEditorToolStripMenuItem, sequenceArchiveEditorToolStripMenuItem, bankEditorToolStripMenuItem, waveArchiveEditorToolStripMenuItem, bankGeneratorToolStripMenuItem, creaveWaveToolStripMenuItem, createStreamToolStripMenuItem, exportSDKProjectToolStripMenuItem, sF2ToDLSToolStripMenuItem, dLSToSF2ToolStripMenuItem, batchExportMIDIDLSSF2ToolStripMenuItem, viewHeapBtn, exportInfoTB });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             toolsToolStripMenuItem.Size = new Size(47, 20);
             toolsToolStripMenuItem.Text = "Tools";
@@ -1329,14 +1341,6 @@ namespace NitroStudio2.Dialogs.Editors
             batchExportMIDIDLSSF2ToolStripMenuItem.Size = new Size(216, 22);
             batchExportMIDIDLSSF2ToolStripMenuItem.Text = "Batch Export MIDI/DLS/SF2";
             // 
-            // importFromExternalSDATToolStripMenuItem
-            // 
-            importFromExternalSDATToolStripMenuItem.Image = Properties.Resources.Import;
-            importFromExternalSDATToolStripMenuItem.Name = "importFromExternalSDATToolStripMenuItem";
-            importFromExternalSDATToolStripMenuItem.Size = new Size(216, 22);
-            importFromExternalSDATToolStripMenuItem.Text = "Import from External SDAT";
-            importFromExternalSDATToolStripMenuItem.Visible = false;
-            // 
             // viewHeapBtn
             // 
             viewHeapBtn.Name = "viewHeapBtn";
@@ -1364,27 +1368,21 @@ namespace NitroStudio2.Dialogs.Editors
             sExportButton.Size = new Size(122, 22);
             sExportButton.Text = ".s File";
             // 
-            // helpToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { getHelpToolStripMenuItem });
-            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(44, 20);
-            helpToolStripMenuItem.Text = "Help";
+            aboutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { getHelpToolStripMenuItem, aboutNitroStudio2ToolStripMenuItem });
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(52, 20);
+            aboutToolStripMenuItem.Text = "About";
             // 
             // getHelpToolStripMenuItem
             // 
             getHelpToolStripMenuItem.Image = Properties.Resources.Help;
             getHelpToolStripMenuItem.Name = "getHelpToolStripMenuItem";
-            getHelpToolStripMenuItem.Size = new Size(120, 22);
+            getHelpToolStripMenuItem.ShortcutKeys = Keys.F1;
+            getHelpToolStripMenuItem.Size = new Size(183, 22);
             getHelpToolStripMenuItem.Text = "Get Help";
             getHelpToolStripMenuItem.Click += GetHelpToolStripMenuItem_Click;
-            // 
-            // aboutToolStripMenuItem
-            // 
-            aboutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutNitroStudio2ToolStripMenuItem });
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(52, 20);
-            aboutToolStripMenuItem.Text = "About";
             // 
             // aboutNitroStudio2ToolStripMenuItem
             // 
@@ -7718,7 +7716,9 @@ namespace NitroStudio2.Dialogs.Editors
 
         private void GetHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Help().Show();
+            // new Help().Show();
+            Process p = new Process();
+            Process.Start(new ProcessStartInfo("https://nitrostudio2x.github.io"));
         }
 
         /// <summary>
