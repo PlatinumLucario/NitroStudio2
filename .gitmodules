@@ -1,15 +1,9 @@
 [submodule "GotaSoundIO"]
 	path = GotaSoundIO
-	url = https://github.com/PlatinumLucario/GotaSoundIO.git
+	url = https://github.com/NitroStudio2X/GotaSoundIO.git
 [submodule "GotaSoundBank"]
 	path = GotaSoundBank
-	url = https://github.com/PlatinumLucario/GotaSoundBank.git
+	url = https://github.com/NitroStudio2X/GotaSoundBank.git
 [submodule "GotaSequenceLib"]
 	path = GotaSequenceLib
-	url = https://github.com/PlatinumLucario/GotaSequenceLib.git
-[submodule "DLS2"]
-	path = DLS2
-	url = https://github.com/PlatinumLucario/DLS2.git
-[submodule "SoundFont2"]
-	path = SoundFont2
-	url = https://github.com/PlatinumLucario/SoundFont2.git
+	url = https://github.com/NitroStudio2X/GotaSequenceLib.git
