@@ -4,19 +4,15 @@ using GotaSoundBank.SF2;
 using GotaSoundIO.IO;
 // using Multimedia.UI;
 using NitroFileLoader;
+using NitroStudio2.Controls;
 using NitroStudio2.Functions;
 using ScintillaNET;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NitroStudio2.Controls;
 
 namespace NitroStudio2.Dialogs.Editors
 {
@@ -5885,8 +5881,26 @@ namespace NitroStudio2.Dialogs.Editors
             //Quit if wanted.
             if (FileOpen)
             {
-                SaveQuitDialog q = new SaveQuitDialog(this);
-                q.ShowDialog();
+                //Ask user if they want to save.
+                DialogResult r = MessageBox.Show("Do you want to save before you exit?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                switch (r)
+                {
+
+                    //Save.
+                    case DialogResult.Yes:
+                        saveToolStripMenuItem_Click(sender, e);
+                        break;
+
+                    //No button.
+                    case DialogResult.No:
+                        break;
+
+                    //Cancel.
+                    default:
+                        break;
+
+                }
+                Close();
             }
             else
             {
@@ -6013,21 +6027,20 @@ namespace NitroStudio2.Dialogs.Editors
             if (FileOpen)
             {
 
-                //Ask user if they want to save.
+                //Ask user if they want to .
                 if (save)
                 {
-
-                    SaveCloseDialog c = new SaveCloseDialog();
-                    switch (c.getValue())
+                    DialogResult r = MessageBox.Show("Do you want to save before you close the file?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    switch (r)
                     {
 
                         //Save.
-                        case 0:
+                        case DialogResult.Yes:
                             saveToolStripMenuItem_Click(sender, e);
                             return true;
 
                         //No button.
-                        case 1:
+                        case DialogResult.No:
                             return true;
 
                         //Cancel.
