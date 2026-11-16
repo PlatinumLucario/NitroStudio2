@@ -3,7 +3,6 @@ using GotaSequenceLib;
 using GotaSequenceLib.Playback;
 using GotaSoundIO.IO;
 using GotaSoundIO.Sound;
-using Kermalis.SoundFont2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
