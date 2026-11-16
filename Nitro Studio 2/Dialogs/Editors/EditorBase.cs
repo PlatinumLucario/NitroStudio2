@@ -7718,7 +7718,7 @@ namespace NitroStudio2.Dialogs.Editors
         {
             // new Help().Show();
             Process p = new Process();
-            Process.Start(new ProcessStartInfo("https://nitrostudio2x.github.io"));
+            Process.Start(new ProcessStartInfo { FileName = "https://nitrostudio2x.github.io", UseShellExecute = true });
         }
 
         /// <summary>
