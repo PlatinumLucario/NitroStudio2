@@ -429,6 +429,9 @@ namespace NitroStudio2.Dialogs.Editors
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton btnReplace;
         private ToolStripButton btnExport;
+        public ToolStripMenuItem viewHeapBtn;
+        private ToolStripSeparator toolStripSeparator2;
+        public ToolStripMenuItem viewHeapUsageBtn2;
 
         /// <summary>
         /// Main window.
@@ -649,6 +652,7 @@ namespace NitroStudio2.Dialogs.Editors
             dLSToSF2ToolStripMenuItem = new ToolStripMenuItem();
             batchExportMIDIDLSSF2ToolStripMenuItem = new ToolStripMenuItem();
             importFromExternalSDATToolStripMenuItem = new ToolStripMenuItem();
+            viewHeapBtn = new ToolStripMenuItem();
             exportInfoTB = new ToolStripMenuItem();
             sdblExportBtn = new ToolStripMenuItem();
             sExportButton = new ToolStripMenuItem();
@@ -997,6 +1001,8 @@ namespace NitroStudio2.Dialogs.Editors
             replaceFileToolStripMenuItem = new ToolStripMenuItem();
             exportToolStripMenuItem1 = new ToolStripMenuItem();
             deleteToolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            viewHeapUsageBtn2 = new ToolStripMenuItem();
             bindingSource1 = new BindingSource(components);
             sarEntryMenu = new ContextMenuStrip(components);
             sarAddAbove = new ToolStripMenuItem();
@@ -1231,7 +1237,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // toolsToolStripMenuItem
             // 
-            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sequenceEditorToolStripMenuItem, sequenceArchiveEditorToolStripMenuItem, bankEditorToolStripMenuItem, waveArchiveEditorToolStripMenuItem, bankGeneratorToolStripMenuItem, creaveWaveToolStripMenuItem, createStreamToolStripMenuItem, exportSDKProjectToolStripMenuItem, sF2ToDLSToolStripMenuItem, dLSToSF2ToolStripMenuItem, batchExportMIDIDLSSF2ToolStripMenuItem, importFromExternalSDATToolStripMenuItem, exportInfoTB });
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sequenceEditorToolStripMenuItem, sequenceArchiveEditorToolStripMenuItem, bankEditorToolStripMenuItem, waveArchiveEditorToolStripMenuItem, bankGeneratorToolStripMenuItem, creaveWaveToolStripMenuItem, createStreamToolStripMenuItem, exportSDKProjectToolStripMenuItem, sF2ToDLSToolStripMenuItem, dLSToSF2ToolStripMenuItem, batchExportMIDIDLSSF2ToolStripMenuItem, importFromExternalSDATToolStripMenuItem, viewHeapBtn, exportInfoTB });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             toolsToolStripMenuItem.Size = new Size(47, 20);
             toolsToolStripMenuItem.Text = "Tools";
@@ -1330,6 +1336,13 @@ namespace NitroStudio2.Dialogs.Editors
             importFromExternalSDATToolStripMenuItem.Size = new Size(216, 22);
             importFromExternalSDATToolStripMenuItem.Text = "Import from External SDAT";
             importFromExternalSDATToolStripMenuItem.Visible = false;
+            // 
+            // viewHeapBtn
+            // 
+            viewHeapBtn.Name = "viewHeapBtn";
+            viewHeapBtn.Size = new Size(216, 22);
+            viewHeapBtn.Text = "View Heap Usage";
+            viewHeapBtn.Visible = false;
             // 
             // exportInfoTB
             // 
@@ -5145,15 +5158,15 @@ namespace NitroStudio2.Dialogs.Editors
             // nodeMenu
             // 
             nodeMenu.ImeMode = ImeMode.Off;
-            nodeMenu.Items.AddRange(new ToolStripItem[] { addAboveToolStripMenuItem1, addBelowToolStripMenuItem1, moveUpToolStripMenuItem1, moveDownToolStripMenuItem1, replaceFileToolStripMenuItem, exportToolStripMenuItem1, deleteToolStripMenuItem1 });
+            nodeMenu.Items.AddRange(new ToolStripItem[] { addAboveToolStripMenuItem1, addBelowToolStripMenuItem1, moveUpToolStripMenuItem1, moveDownToolStripMenuItem1, replaceFileToolStripMenuItem, exportToolStripMenuItem1, deleteToolStripMenuItem1, toolStripSeparator2, viewHeapUsageBtn2 });
             nodeMenu.Name = "contextMenuStrip1";
-            nodeMenu.Size = new Size(139, 158);
+            nodeMenu.Size = new Size(166, 186);
             // 
             // addAboveToolStripMenuItem1
             // 
             addAboveToolStripMenuItem1.Image = Properties.Resources.New;
             addAboveToolStripMenuItem1.Name = "addAboveToolStripMenuItem1";
-            addAboveToolStripMenuItem1.Size = new Size(138, 22);
+            addAboveToolStripMenuItem1.Size = new Size(165, 22);
             addAboveToolStripMenuItem1.Text = "Add Above";
             addAboveToolStripMenuItem1.Click += addAboveToolStripMenuItem1_Click;
             // 
@@ -5161,7 +5174,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             addBelowToolStripMenuItem1.Image = Properties.Resources.Open;
             addBelowToolStripMenuItem1.Name = "addBelowToolStripMenuItem1";
-            addBelowToolStripMenuItem1.Size = new Size(138, 22);
+            addBelowToolStripMenuItem1.Size = new Size(165, 22);
             addBelowToolStripMenuItem1.Text = "Add Below";
             addBelowToolStripMenuItem1.Click += addBelowToolStripMenuItem1_Click;
             // 
@@ -5169,7 +5182,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             moveUpToolStripMenuItem1.Image = Properties.Resources.Save;
             moveUpToolStripMenuItem1.Name = "moveUpToolStripMenuItem1";
-            moveUpToolStripMenuItem1.Size = new Size(138, 22);
+            moveUpToolStripMenuItem1.Size = new Size(165, 22);
             moveUpToolStripMenuItem1.Text = "Move Up";
             moveUpToolStripMenuItem1.Click += moveUpToolStripMenuItem1_Click;
             // 
@@ -5177,7 +5190,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             moveDownToolStripMenuItem1.Image = Properties.Resources.Save_As;
             moveDownToolStripMenuItem1.Name = "moveDownToolStripMenuItem1";
-            moveDownToolStripMenuItem1.Size = new Size(138, 22);
+            moveDownToolStripMenuItem1.Size = new Size(165, 22);
             moveDownToolStripMenuItem1.Text = "Move Down";
             moveDownToolStripMenuItem1.Click += moveDownToolStripMenuItem1_Click;
             // 
@@ -5185,7 +5198,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             replaceFileToolStripMenuItem.Image = Properties.Resources.Import;
             replaceFileToolStripMenuItem.Name = "replaceFileToolStripMenuItem";
-            replaceFileToolStripMenuItem.Size = new Size(138, 22);
+            replaceFileToolStripMenuItem.Size = new Size(165, 22);
             replaceFileToolStripMenuItem.Text = "Replace";
             replaceFileToolStripMenuItem.Click += replaceFileToolStripMenuItem_Click;
             // 
@@ -5193,7 +5206,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             exportToolStripMenuItem1.Image = Properties.Resources.Export;
             exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            exportToolStripMenuItem1.Size = new Size(138, 22);
+            exportToolStripMenuItem1.Size = new Size(165, 22);
             exportToolStripMenuItem1.Text = "Export";
             exportToolStripMenuItem1.Click += exportToolStripMenuItem1_Click;
             // 
@@ -5202,9 +5215,21 @@ namespace NitroStudio2.Dialogs.Editors
             deleteToolStripMenuItem1.Image = Properties.Resources.Close;
             deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
             deleteToolStripMenuItem1.ShortcutKeys = Keys.Delete;
-            deleteToolStripMenuItem1.Size = new Size(138, 22);
+            deleteToolStripMenuItem1.Size = new Size(165, 22);
             deleteToolStripMenuItem1.Text = "Delete";
             deleteToolStripMenuItem1.Click += deleteToolStripMenuItem1_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(162, 6);
+            // 
+            // viewHeapUsageBtn2
+            // 
+            viewHeapUsageBtn2.Name = "viewHeapUsageBtn2";
+            viewHeapUsageBtn2.Size = new Size(165, 22);
+            viewHeapUsageBtn2.Text = "View Heap Usage";
+            viewHeapUsageBtn2.Visible = false;
             // 
             // sarEntryMenu
             // 

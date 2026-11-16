@@ -8,14 +8,12 @@ using Microsoft.VisualBasic;
 using NAudio.CoreAudioApi;
 using NitroFileLoader;
 using NitroStudio2.Functions;
-using NitroStudio2.Functions.NewConverters;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Instrument = NitroFileLoader.Instrument;
 
 namespace NitroStudio2.Dialogs.Editors
 {
@@ -213,6 +211,39 @@ namespace NitroStudio2.Dialogs.Editors
             HandleChecks.Interval = 1000;
             HandleChecks.Tick += HandleChecks_Tick;
             HandleChecks.Start();
+
+            // Heap Usage Window
+            viewHeapBtn.Visible = true;
+            viewHeapBtn.Click += ViewHeapBtn_Click;
+            viewHeapUsageBtn2.Visible = true;
+            viewHeapUsageBtn2.Click += ViewHeapBtn_Click;
+        }
+
+        private void ViewHeapBtn_Click(object sender, EventArgs e)
+        {
+            if (tree.SelectedNode.Parent.Name == "sequences")
+            {
+                var s = SA.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
+                int size = (int)(s.File.RawData.Length + s.Bank.File.Write().Length);
+                if (s.Bank.ReadingWave0Id != 0xFFFF)
+                {
+                    size += s.Bank.WaveArchives[0].File.Write().Length;
+                }
+                if (s.Bank.ReadingWave1Id != 0xFFFF)
+                {
+                    size += s.Bank.WaveArchives[1].File.Write().Length;
+                }
+                if (s.Bank.ReadingWave2Id != 0xFFFF)
+                {
+                    size += s.Bank.WaveArchives[2].File.Write().Length;
+                }
+                if (s.Bank.ReadingWave3Id != 0xFFFF)
+                {
+                    size += s.Bank.WaveArchives[3].File.Write().Length;
+                }
+                var d = new HeapChecker(size, (int)s.Player.HeapSize);
+                d.ShowDialog();
+            }
         }
 
         private void ReloadConfig()
@@ -258,7 +289,7 @@ namespace NitroStudio2.Dialogs.Editors
         private void HandleChecks_Tick(object sender, EventArgs e)
         {
             MMDeviceEnumerator MMdevEnum = new MMDeviceEnumerator();
-            if(Mixer.Device.State != DeviceState.Active)
+            if (Mixer.Device.State != DeviceState.Active)
             {
                 HandleChecks.Stop();
                 Player.Pause();
@@ -337,7 +368,7 @@ namespace NitroStudio2.Dialogs.Editors
             }
         }
 
-        
+
         private void StmPlayerComboBox_Click(object sender, EventArgs e)
         {
             if (Control.ModifierKeys == Keys.Shift)
@@ -622,7 +653,7 @@ namespace NitroStudio2.Dialogs.Editors
                 }
             }
 
-                if (SA != null)
+            if (SA != null)
             {
                 if (Functions.Global.c.Settings["writeNames"].ToLower() == "true")
                 {
@@ -803,7 +834,7 @@ namespace NitroStudio2.Dialogs.Editors
                         playerFlag13Box.Checked = e.ChannelFlags[13];
                         playerFlag14Box.Checked = e.ChannelFlags[14];
                         playerFlag15Box.Checked = e.ChannelFlags[15];
-                        
+
                     }
 
                     //Group.
@@ -817,7 +848,7 @@ namespace NitroStudio2.Dialogs.Editors
                         var e = SA.Groups.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
                         itemIndexBox.Value = e.Index;
                         PopulateGroupGrid(grpEntries, e);
-                        
+
                     }
 
                     //Stream player.
@@ -848,7 +879,7 @@ namespace NitroStudio2.Dialogs.Editors
                             rightChannelLabel.Enabled = false;
                             stmPlayerRightChannelBox.Enabled = false;
                         }
-                        
+
                     }
 
                     //Stream.
@@ -886,7 +917,7 @@ namespace NitroStudio2.Dialogs.Editors
                     kermalisSoundPlayerPanel.Show();
                     blankPanel.Show();
                     var e = SA.SequenceArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode.Parent)).FirstOrDefault().File.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
-                    
+
                 }
 
             }
@@ -897,7 +928,7 @@ namespace NitroStudio2.Dialogs.Editors
                 HideStuff();
                 noInfoPanel.BringToFront();
                 noInfoPanel.Show();
-                
+
             }
 
             //Done.

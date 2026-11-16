@@ -35,9 +35,33 @@ namespace NitroStudio2
 
         private void HeapChecker_Load(object sender, EventArgs e)
         {
+            if(heap_size <= 0)
+            {
+                MessageBox.Show("Unable to show heap calculation for Players with a heap size less than 0. Heap used is " + GetBytesSize(heap_used), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
             pVisual.Maximum = heap_size;
-            pVisual.Value = heap_used;
             double d = heap_used / heap_size;
+            if (d > 100)
+            {
+                pVisual.Value = heap_size;
+                pVisual.ForeColor = Color.Red;
+            }
+            else if (d > 90)
+            {
+                pVisual.Value = heap_used;
+                pVisual.ForeColor = Color.Red;
+            }
+            else if (d > 70)
+            {
+                pVisual.Value = heap_used;
+                pVisual.ForeColor = Color.Yellow;
+            }
+            else
+            {
+                pVisual.Value = heap_used;
+            }
             lUsage.Text = "Heap Usage: " + GetBytesSize(heap_used) + " / " + GetBytesSize(heap_size) + "(" + (Math.Round(d))*100 + "%)";
             lRemain.Text = "Heap Remaining: " + GetBytesSize(heap_size - heap_used);
         }
