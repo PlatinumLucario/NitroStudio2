@@ -129,8 +129,11 @@ namespace NitroStudio2.Dialogs.Editors
             {
                 if (MainWindow.SA != null)
                 {
-                    pnlPianoKeys.BringToFront();
-                    pnlPianoKeys.Show();
+                    if (bool.Parse(Global.c.Settings["showVirtualPiano"]))
+                    {
+                        pnlPianoKeys.BringToFront();
+                        pnlPianoKeys.Show();
+                    }
                     bankEditorWars.BringToFront();
                     bankEditorWars.Show();
                     tree.KeyPress += new KeyPressEventHandler(KeyPress);

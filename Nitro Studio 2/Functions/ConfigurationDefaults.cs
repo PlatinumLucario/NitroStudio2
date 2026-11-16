@@ -9,7 +9,7 @@ namespace NitroStudio2.Functions
 {
     public static class ConfigurationDefaults
     {
-        private static string GetDefaultWaveDevice()
+        public static string GetDefaultWaveDevice()
         {
             string deviceId;
             try {
@@ -20,14 +20,5 @@ namespace NitroStudio2.Functions
             }
             return deviceId;
         }
-        public static readonly Dictionary<string, string> Defaults = new Dictionary<string, string> {
-            { "version", Global.version},
-            { "writeNames", "true" },
-            { "importTool", "NitroStudio" },
-            { "exportTool", "NitroStudio" },
-            { "inputMidiDevice", "0" },
-            { "outputWaveDevice", GetDefaultWaveDevice()},
-            { "viewHeap", "hex"},
-        };
     }
 }

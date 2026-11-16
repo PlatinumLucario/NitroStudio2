@@ -43,16 +43,36 @@ namespace NitroFileLoader {
         /// <returns>It doesn't.</returns>
         public override bool SupportsTracks() => false;
 
+        private Type SecretEncoding = typeof(ImaAdpcm);
+
         /// <summary>
         /// Preferred encoding.
         /// </summary>
         /// <returns>The preferred encoding.</returns>
-        public override Type PreferredEncoding() => typeof(ImaAdpcm);
+        public override Type PreferredEncoding() => SecretEncoding;
 
         /// <summary>
         /// Backup nTime to minimize inconsistencies.
         /// </summary>
         private ushort BackupNTime;
+
+        public Wave()
+        {
+
+        }
+
+        public Wave(PcmFormat format)
+        {
+            switch(format)
+            {
+                case PcmFormat.SignedPCM8:
+                    SecretEncoding = typeof(PCM8Signed); break;
+                case PcmFormat.PCM16:
+                    SecretEncoding = typeof(PCM16); break;
+                case PcmFormat.Encoded:
+                    SecretEncoding = typeof(ImaAdpcm); break;
+            }
+        }
 
         /// <summary>
         /// Read the file.
@@ -85,8 +105,8 @@ namespace NitroFileLoader {
         public static Wave ReadShortened(FileReader r, uint length) {
 
             //Set up wave.
-            Wave w = new Wave();
             PcmFormat pcmFormat = (PcmFormat)r.ReadByte();
+            Wave w = new Wave(pcmFormat);
             w.Loops = r.ReadBoolean();
             int numChannels = 1;
             w.SampleRate = r.ReadUInt16();

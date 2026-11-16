@@ -51,13 +51,15 @@ namespace NitroStudio2
             Functions.Global.c.Settings["inputMidiDevice"] = cbMidiInput.SelectedIndex.ToString();
             Functions.Global.c.Settings["outputWaveDevice"] = devices[cbWaveOutput.SelectedIndex];
 
-            if(comboHeap.SelectedIndex == 0)
+            if (comboHeap.SelectedIndex == 0)
             {
                 Functions.Global.c.Settings["viewHeap"] = "hex";
-            } else
+            }
+            else
             {
                 Functions.Global.c.Settings["viewHeap"] = "dec";
             }
+            Functions.Global.c.Settings["showVirtualPiano"] = virtualPiano.Checked.ToString();
 
             Functions.Global.c.WriteConfig();
             btnApply.Enabled = false;
@@ -76,7 +78,7 @@ namespace NitroStudio2
                 cbWaveOutput.Items.Add(device.FriendlyName + " (" + device.State + ")");
                 devices.Add(device.ID);
             }
-            if(cbWaveOutput.Items.Count < 1)
+            if (cbWaveOutput.Items.Count < 1)
             {
                 cbWaveOutput.Text = "None Avalible";
                 cbWaveOutput.Enabled = false;
@@ -94,6 +96,7 @@ namespace NitroStudio2
             }
 
             writeNames.Checked = bool.Parse(config.Settings["writeNames"]);
+            virtualPiano.Checked = bool.Parse(config.Settings["showVirtualPiano"]);
             switch (config.Settings["importTool"])
             {
                 case "NitroStudio":
@@ -122,7 +125,7 @@ namespace NitroStudio2
                     x++;
                 }
             }
-            
+
 
             if (cbMidiInput.Items.Count >= 1)
             {
@@ -132,7 +135,8 @@ namespace NitroStudio2
             if (config.Settings["viewHeap"] == "hex")
             {
                 comboHeap.SelectedIndex = 0;
-            } else
+            }
+            else
             {
                 comboHeap.SelectedIndex = 1;
             }
@@ -177,6 +181,12 @@ namespace NitroStudio2
         }
 
         private void comboHeap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnOk.Enabled = false;
+            btnApply.Enabled = true;
+        }
+
+        private void virtualPiano_CheckedChanged(object sender, EventArgs e)
         {
             btnOk.Enabled = false;
             btnApply.Enabled = true;

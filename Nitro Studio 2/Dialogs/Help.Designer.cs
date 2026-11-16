@@ -41,7 +41,6 @@
             helpDocument.Location = new System.Drawing.Point(271, 0);
             helpDocument.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             helpDocument.Name = "helpDocument";
-            helpDocument.ReadOnly = true;
             helpDocument.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             helpDocument.Size = new System.Drawing.Size(635, 533);
             helpDocument.TabIndex = 0;

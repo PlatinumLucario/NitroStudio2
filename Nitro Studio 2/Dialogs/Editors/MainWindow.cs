@@ -8,6 +8,7 @@ using Microsoft.VisualBasic;
 using NAudio.CoreAudioApi;
 using NitroFileLoader;
 using NitroStudio2.Functions;
+using NitroStudio2.Functions.NewConverters;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -709,7 +710,7 @@ namespace NitroStudio2.Dialogs.Editors
                         PopulatePlayerBox(SA, seqPlayerComboBox);
                         SetPlayerIndex(SA, seqPlayerComboBox, e.Player == null ? e.ReadingPlayerId : (byte)e.Player.Index);
                         seqPlayerBox.Value = e.Player == null ? e.ReadingPlayerId : (byte)e.Player.Index;
-                        fileSizeLabel.Text = "File Is " + GetBytesSize(e.File);
+                        fileSizeLabel.Text = e.Name + " is " + GetBytesSize(e.File);
                         fileSizePanel.Show();
                     }
 
@@ -921,6 +922,7 @@ namespace NitroStudio2.Dialogs.Editors
                 if (tree.SelectedNode.Parent == tree.Nodes["sequences"])
                 {
                     var e = SA.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
+                    status.Text = "Starting editor for " + e.Name + "...";
                     SequenceEditor ed = new SequenceEditor(e.File, this, e.Name);
                     SetBankIndex(SA, ed.seqEditorBankComboBox, e.Bank == null ? e.ReadingBankId : (uint)e.Bank.Index);
                     ed.seqEditorBankBox.Value = e.Bank == null ? e.ReadingBankId : (uint)e.Bank.Index;
@@ -931,6 +933,7 @@ namespace NitroStudio2.Dialogs.Editors
                 else if (tree.SelectedNode.Parent == tree.Nodes["sequenceArchives"])
                 {
                     var e = SA.SequenceArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
+                    status.Text = "Starting editor for " + e.Name + "...";
                     SequenceArchiveEditor ed = new SequenceArchiveEditor(e.File, this, e.Name);
                     ed.Show();
                 }
@@ -939,6 +942,7 @@ namespace NitroStudio2.Dialogs.Editors
                 else if (tree.SelectedNode.Parent == tree.Nodes["banks"])
                 {
                     var e = SA.Banks.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
+                    status.Text = "Starting editor for " + e.Name + "...";
                     BankEditor ed = new BankEditor(e.File, this, e.Name);
                     SetWaveArchiveIndex(SA, ed.war0ComboBox, e.WaveArchives[0] == null ? e.ReadingWave0Id : (ushort)e.WaveArchives[0].Index);
                     SetWaveArchiveIndex(SA, ed.war1ComboBox, e.WaveArchives[1] == null ? e.ReadingWave1Id : (ushort)e.WaveArchives[1].Index);
@@ -956,6 +960,7 @@ namespace NitroStudio2.Dialogs.Editors
                 else if (tree.SelectedNode.Parent == tree.Nodes["waveArchives"])
                 {
                     var e = SA.WaveArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
+                    status.Text = "Starting editor for " + e.Name + "...";
                     WaveArchiveEditor ed = new WaveArchiveEditor(e.File, this, e.Name);
                     ed.Show();
                 }
@@ -964,12 +969,15 @@ namespace NitroStudio2.Dialogs.Editors
                 else if (tree.SelectedNode.Parent == tree.Nodes["streams"])
                 {
                     var s = SA.Streams.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
+                    status.Text = "Starting player for " + s.Name + "...";
                     RiffWave r = new RiffWave();
                     r.FromOtherStreamFile(s.File);
                     r.Write(MainWindow.NitroPath + "/" + "tmpStream" + StreamTempCount++ + ".wav");
                     StreamPlayer p = new StreamPlayer(this, MainWindow.NitroPath + "/" + "tmpStream" + (StreamTempCount - 1) + ".wav", s.Name);
                     p.Show();
                 }
+
+                status.Text = "Ready";
 
             }
 

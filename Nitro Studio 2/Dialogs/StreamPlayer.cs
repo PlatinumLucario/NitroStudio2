@@ -1,4 +1,9 @@
-﻿using NAudio.Wave;
+﻿using GotaSoundIO.Sound;
+using NAudio.CoreAudioApi;
+using NAudio.Wave;
+using NitroFileLoader;
+using NitroStudio2.Dialogs.Editors;
+using NitroStudio2.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,10 +15,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NAudio.CoreAudioApi;
-using NitroStudio2.Functions;
-using GotaSoundIO.Sound;
-using NitroStudio2.Dialogs.Editors;
 
 namespace NitroStudio2 {
     public partial class StreamPlayer : Form
@@ -36,18 +37,18 @@ namespace NitroStudio2 {
             bStop.Enabled = false;
             bPause.Enabled = false;
             Player.Loop = true;
-            // Setup visualiser from NAudio
-            waveViewer1.WaveStream = new NAudio.Wave.WaveFileReader(stream);
             // Setup player for proper handling of playback status
             t.Tick += T_Tick;
             t.Interval = 1000 / 30;
             t.Start();
             File = stream;
+            positionInSong.Text = Player.WaveFileReader.CurrentTime + " / " + Player.WaveFileReader.TotalTime;
         }
 
         private void T_Tick(object sender, EventArgs e)
         {
             trackBar1.Value = (int)Player.GetPosition();
+            positionInSong.Text = Player.WaveFileReader.CurrentTime + " / " + Player.WaveFileReader.TotalTime;
         }
 
         private void onClose(object sender, EventArgs e)

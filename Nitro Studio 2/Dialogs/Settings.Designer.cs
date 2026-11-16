@@ -28,257 +28,282 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lImportTool = new System.Windows.Forms.Label();
-            this.lExportTool = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnApply = new System.Windows.Forms.Button();
-            this.btnOk = new System.Windows.Forms.Button();
-            this.writeNames = new System.Windows.Forms.CheckBox();
-            this.comboImport = new System.Windows.Forms.ComboBox();
-            this.comboExport = new System.Windows.Forms.ComboBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.saSettings = new System.Windows.Forms.TabPage();
-            this.sdSettings = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbWaveOutput = new System.Windows.Forms.ComboBox();
-            this.lblInput = new System.Windows.Forms.Label();
-            this.cbMidiInput = new System.Windows.Forms.ComboBox();
-            this.inSettings = new System.Windows.Forms.TabPage();
-            this.lHeapsizes = new System.Windows.Forms.Label();
-            this.comboHeap = new System.Windows.Forms.ComboBox();
-            this.tabControl1.SuspendLayout();
-            this.saSettings.SuspendLayout();
-            this.sdSettings.SuspendLayout();
-            this.inSettings.SuspendLayout();
-            this.SuspendLayout();
+            lImportTool = new System.Windows.Forms.Label();
+            lExportTool = new System.Windows.Forms.Label();
+            btnCancel = new System.Windows.Forms.Button();
+            btnApply = new System.Windows.Forms.Button();
+            btnOk = new System.Windows.Forms.Button();
+            writeNames = new System.Windows.Forms.CheckBox();
+            comboImport = new System.Windows.Forms.ComboBox();
+            comboExport = new System.Windows.Forms.ComboBox();
+            tabControl1 = new System.Windows.Forms.TabControl();
+            saSettings = new System.Windows.Forms.TabPage();
+            sdSettings = new System.Windows.Forms.TabPage();
+            label1 = new System.Windows.Forms.Label();
+            cbWaveOutput = new System.Windows.Forms.ComboBox();
+            lblInput = new System.Windows.Forms.Label();
+            cbMidiInput = new System.Windows.Forms.ComboBox();
+            inSettings = new System.Windows.Forms.TabPage();
+            virtualPiano = new System.Windows.Forms.CheckBox();
+            comboHeap = new System.Windows.Forms.ComboBox();
+            lHeapsizes = new System.Windows.Forms.Label();
+            tabControl1.SuspendLayout();
+            saSettings.SuspendLayout();
+            sdSettings.SuspendLayout();
+            inSettings.SuspendLayout();
+            SuspendLayout();
             // 
             // lImportTool
             // 
-            this.lImportTool.AutoSize = true;
-            this.lImportTool.Location = new System.Drawing.Point(4, 37);
-            this.lImportTool.Name = "lImportTool";
-            this.lImportTool.Size = new System.Drawing.Size(75, 13);
-            this.lImportTool.TabIndex = 1;
-            this.lImportTool.Text = "Import Method";
+            lImportTool.AutoSize = true;
+            lImportTool.Location = new System.Drawing.Point(5, 43);
+            lImportTool.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lImportTool.Name = "lImportTool";
+            lImportTool.Size = new System.Drawing.Size(88, 15);
+            lImportTool.TabIndex = 1;
+            lImportTool.Text = "Import Method";
             // 
             // lExportTool
             // 
-            this.lExportTool.AutoSize = true;
-            this.lExportTool.Location = new System.Drawing.Point(4, 64);
-            this.lExportTool.Name = "lExportTool";
-            this.lExportTool.Size = new System.Drawing.Size(76, 13);
-            this.lExportTool.TabIndex = 2;
-            this.lExportTool.Text = "Export Method";
+            lExportTool.AutoSize = true;
+            lExportTool.Location = new System.Drawing.Point(5, 74);
+            lExportTool.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lExportTool.Name = "lExportTool";
+            lExportTool.Size = new System.Drawing.Size(85, 15);
+            lExportTool.TabIndex = 2;
+            lExportTool.Text = "Export Method";
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(4, 326);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            btnCancel.Location = new System.Drawing.Point(5, 376);
+            btnCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(88, 27);
+            btnCancel.TabIndex = 3;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(216, 326);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 4;
-            this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            btnApply.Location = new System.Drawing.Point(252, 376);
+            btnApply.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnApply.Name = "btnApply";
+            btnApply.Size = new System.Drawing.Size(88, 27);
+            btnApply.TabIndex = 4;
+            btnApply.Text = "Apply";
+            btnApply.UseVisualStyleBackColor = true;
+            btnApply.Click += btnApply_Click;
             // 
             // btnOk
             // 
-            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(297, 326);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 5;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            btnOk.Location = new System.Drawing.Point(346, 376);
+            btnOk.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnOk.Name = "btnOk";
+            btnOk.Size = new System.Drawing.Size(88, 27);
+            btnOk.TabIndex = 5;
+            btnOk.Text = "OK";
+            btnOk.UseVisualStyleBackColor = true;
+            btnOk.Click += btnOk_Click;
             // 
             // writeNames
             // 
-            this.writeNames.AutoSize = true;
-            this.writeNames.Checked = true;
-            this.writeNames.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.writeNames.Location = new System.Drawing.Point(6, 6);
-            this.writeNames.Name = "writeNames";
-            this.writeNames.Size = new System.Drawing.Size(129, 17);
-            this.writeNames.TabIndex = 6;
-            this.writeNames.Text = "Write Names of Files?";
-            this.writeNames.UseVisualStyleBackColor = true;
-            this.writeNames.CheckedChanged += new System.EventHandler(this.writeNames_CheckedChanged);
+            writeNames.AutoSize = true;
+            writeNames.Checked = true;
+            writeNames.CheckState = System.Windows.Forms.CheckState.Checked;
+            writeNames.Location = new System.Drawing.Point(7, 7);
+            writeNames.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            writeNames.Name = "writeNames";
+            writeNames.Size = new System.Drawing.Size(139, 19);
+            writeNames.TabIndex = 6;
+            writeNames.Text = "Write Names of Files?";
+            writeNames.UseVisualStyleBackColor = true;
+            writeNames.CheckedChanged += writeNames_CheckedChanged;
             // 
             // comboImport
             // 
-            this.comboImport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboImport.FormattingEnabled = true;
-            this.comboImport.Items.AddRange(new object[] {
-            "Nitro Studio",
-            "Midi2Sseq",
-            "Nintendo Tools"});
-            this.comboImport.Location = new System.Drawing.Point(85, 34);
-            this.comboImport.Name = "comboImport";
-            this.comboImport.Size = new System.Drawing.Size(202, 21);
-            this.comboImport.TabIndex = 7;
-            this.comboImport.SelectedIndexChanged += new System.EventHandler(this.comboImport_SelectedIndexChanged);
-            this.comboImport.SelectionChangeCommitted += new System.EventHandler(this.comboImport_SelectionChangeCommitted);
+            comboImport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboImport.FormattingEnabled = true;
+            comboImport.Items.AddRange(new object[] { "Nitro Studio", "Midi2Sseq", "Nintendo Tools" });
+            comboImport.Location = new System.Drawing.Point(99, 39);
+            comboImport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboImport.Name = "comboImport";
+            comboImport.Size = new System.Drawing.Size(235, 23);
+            comboImport.TabIndex = 7;
+            comboImport.SelectedIndexChanged += comboImport_SelectedIndexChanged;
+            comboImport.SelectionChangeCommitted += comboImport_SelectionChangeCommitted;
             // 
             // comboExport
             // 
-            this.comboExport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboExport.FormattingEnabled = true;
-            this.comboExport.Items.AddRange(new object[] {
-            "Nitro Studio",
-            "Sseq2Midi"});
-            this.comboExport.Location = new System.Drawing.Point(85, 61);
-            this.comboExport.Name = "comboExport";
-            this.comboExport.Size = new System.Drawing.Size(202, 21);
-            this.comboExport.TabIndex = 8;
-            this.comboExport.SelectedIndexChanged += new System.EventHandler(this.comboExport_SelectedIndexChanged);
-            this.comboExport.SelectionChangeCommitted += new System.EventHandler(this.comboExport_SelectionChangeCommitted);
+            comboExport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboExport.FormattingEnabled = true;
+            comboExport.Items.AddRange(new object[] { "Nitro Studio", "Sseq2Midi" });
+            comboExport.Location = new System.Drawing.Point(99, 70);
+            comboExport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboExport.Name = "comboExport";
+            comboExport.Size = new System.Drawing.Size(235, 23);
+            comboExport.TabIndex = 8;
+            comboExport.SelectedIndexChanged += comboExport_SelectedIndexChanged;
+            comboExport.SelectionChangeCommitted += comboExport_SelectionChangeCommitted;
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.saSettings);
-            this.tabControl1.Controls.Add(this.sdSettings);
-            this.tabControl1.Controls.Add(this.inSettings);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(390, 320);
-            this.tabControl1.TabIndex = 9;
+            tabControl1.Controls.Add(saSettings);
+            tabControl1.Controls.Add(sdSettings);
+            tabControl1.Controls.Add(inSettings);
+            tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            tabControl1.Location = new System.Drawing.Point(0, 0);
+            tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new System.Drawing.Size(455, 369);
+            tabControl1.TabIndex = 9;
             // 
             // saSettings
             // 
-            this.saSettings.Controls.Add(this.writeNames);
-            this.saSettings.Controls.Add(this.comboExport);
-            this.saSettings.Controls.Add(this.lImportTool);
-            this.saSettings.Controls.Add(this.comboImport);
-            this.saSettings.Controls.Add(this.lExportTool);
-            this.saSettings.Location = new System.Drawing.Point(4, 22);
-            this.saSettings.Name = "saSettings";
-            this.saSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.saSettings.Size = new System.Drawing.Size(382, 294);
-            this.saSettings.TabIndex = 0;
-            this.saSettings.Text = "Sound Archive";
-            this.saSettings.UseVisualStyleBackColor = true;
+            saSettings.Controls.Add(writeNames);
+            saSettings.Controls.Add(comboExport);
+            saSettings.Controls.Add(lImportTool);
+            saSettings.Controls.Add(comboImport);
+            saSettings.Controls.Add(lExportTool);
+            saSettings.Location = new System.Drawing.Point(4, 24);
+            saSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            saSettings.Name = "saSettings";
+            saSettings.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            saSettings.Size = new System.Drawing.Size(447, 341);
+            saSettings.TabIndex = 0;
+            saSettings.Text = "Sound Archive";
+            saSettings.UseVisualStyleBackColor = true;
             // 
             // sdSettings
             // 
-            this.sdSettings.Controls.Add(this.label1);
-            this.sdSettings.Controls.Add(this.cbWaveOutput);
-            this.sdSettings.Controls.Add(this.lblInput);
-            this.sdSettings.Controls.Add(this.cbMidiInput);
-            this.sdSettings.Location = new System.Drawing.Point(4, 22);
-            this.sdSettings.Name = "sdSettings";
-            this.sdSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.sdSettings.Size = new System.Drawing.Size(382, 294);
-            this.sdSettings.TabIndex = 1;
-            this.sdSettings.Text = "Sound Device";
-            this.sdSettings.UseVisualStyleBackColor = true;
+            sdSettings.Controls.Add(label1);
+            sdSettings.Controls.Add(cbWaveOutput);
+            sdSettings.Controls.Add(lblInput);
+            sdSettings.Controls.Add(cbMidiInput);
+            sdSettings.Location = new System.Drawing.Point(4, 24);
+            sdSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            sdSettings.Name = "sdSettings";
+            sdSettings.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            sdSettings.Size = new System.Drawing.Size(447, 341);
+            sdSettings.TabIndex = 1;
+            sdSettings.Text = "Sound Device";
+            sdSettings.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Wave Output";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(7, 35);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(77, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Wave Output";
             // 
             // cbWaveOutput
             // 
-            this.cbWaveOutput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbWaveOutput.FormattingEnabled = true;
-            this.cbWaveOutput.Location = new System.Drawing.Point(83, 27);
-            this.cbWaveOutput.Name = "cbWaveOutput";
-            this.cbWaveOutput.Size = new System.Drawing.Size(285, 21);
-            this.cbWaveOutput.TabIndex = 2;
-            this.cbWaveOutput.SelectedIndexChanged += new System.EventHandler(this.cbWaveOutput_SelectedIndexChanged);
+            cbWaveOutput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbWaveOutput.FormattingEnabled = true;
+            cbWaveOutput.Location = new System.Drawing.Point(97, 31);
+            cbWaveOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbWaveOutput.Name = "cbWaveOutput";
+            cbWaveOutput.Size = new System.Drawing.Size(332, 23);
+            cbWaveOutput.TabIndex = 2;
+            cbWaveOutput.SelectedIndexChanged += cbWaveOutput_SelectedIndexChanged;
             // 
             // lblInput
             // 
-            this.lblInput.AutoSize = true;
-            this.lblInput.Location = new System.Drawing.Point(6, 6);
-            this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(57, 13);
-            this.lblInput.TabIndex = 1;
-            this.lblInput.Text = "MIDI Input";
+            lblInput.AutoSize = true;
+            lblInput.Location = new System.Drawing.Point(7, 7);
+            lblInput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblInput.Name = "lblInput";
+            lblInput.Size = new System.Drawing.Size(63, 15);
+            lblInput.TabIndex = 1;
+            lblInput.Text = "MIDI Input";
             // 
             // cbMidiInput
             // 
-            this.cbMidiInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMidiInput.FormattingEnabled = true;
-            this.cbMidiInput.Location = new System.Drawing.Point(83, 3);
-            this.cbMidiInput.Name = "cbMidiInput";
-            this.cbMidiInput.Size = new System.Drawing.Size(285, 21);
-            this.cbMidiInput.TabIndex = 0;
-            this.cbMidiInput.SelectedIndexChanged += new System.EventHandler(this.cbMidiInput_SelectedIndexChanged);
+            cbMidiInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbMidiInput.FormattingEnabled = true;
+            cbMidiInput.Location = new System.Drawing.Point(97, 3);
+            cbMidiInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbMidiInput.Name = "cbMidiInput";
+            cbMidiInput.Size = new System.Drawing.Size(332, 23);
+            cbMidiInput.TabIndex = 0;
+            cbMidiInput.SelectedIndexChanged += cbMidiInput_SelectedIndexChanged;
             // 
             // inSettings
             // 
-            this.inSettings.Controls.Add(this.comboHeap);
-            this.inSettings.Controls.Add(this.lHeapsizes);
-            this.inSettings.Location = new System.Drawing.Point(4, 22);
-            this.inSettings.Name = "inSettings";
-            this.inSettings.Size = new System.Drawing.Size(382, 294);
-            this.inSettings.TabIndex = 2;
-            this.inSettings.Text = "Interface";
-            this.inSettings.UseVisualStyleBackColor = true;
+            inSettings.Controls.Add(virtualPiano);
+            inSettings.Controls.Add(comboHeap);
+            inSettings.Controls.Add(lHeapsizes);
+            inSettings.Location = new System.Drawing.Point(4, 24);
+            inSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            inSettings.Name = "inSettings";
+            inSettings.Size = new System.Drawing.Size(447, 341);
+            inSettings.TabIndex = 2;
+            inSettings.Text = "Interface";
+            inSettings.UseVisualStyleBackColor = true;
             // 
-            // lHeapsizes
+            // virtualPiano
             // 
-            this.lHeapsizes.AutoSize = true;
-            this.lHeapsizes.Location = new System.Drawing.Point(8, 8);
-            this.lHeapsizes.Name = "lHeapsizes";
-            this.lHeapsizes.Size = new System.Drawing.Size(112, 13);
-            this.lHeapsizes.TabIndex = 0;
-            this.lHeapsizes.Text = "Display Heap Sizes in:";
+            virtualPiano.AutoSize = true;
+            virtualPiano.Location = new System.Drawing.Point(9, 27);
+            virtualPiano.Name = "virtualPiano";
+            virtualPiano.Size = new System.Drawing.Size(125, 19);
+            virtualPiano.TabIndex = 2;
+            virtualPiano.Text = "Show Virtual Piano";
+            virtualPiano.UseVisualStyleBackColor = true;
+            virtualPiano.CheckedChanged += virtualPiano_CheckedChanged;
             // 
             // comboHeap
             // 
-            this.comboHeap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboHeap.FormattingEnabled = true;
-            this.comboHeap.Items.AddRange(new object[] {
-            "Hexadecimal (0xFF)",
-            "Decimal (255)"});
-            this.comboHeap.Location = new System.Drawing.Point(126, 5);
-            this.comboHeap.Name = "comboHeap";
-            this.comboHeap.Size = new System.Drawing.Size(248, 21);
-            this.comboHeap.TabIndex = 1;
-            this.comboHeap.SelectedIndexChanged += new System.EventHandler(this.comboHeap_SelectedIndexChanged);
+            comboHeap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboHeap.FormattingEnabled = true;
+            comboHeap.Items.AddRange(new object[] { "Hexadecimal (0xFF)", "Decimal (255)" });
+            comboHeap.Location = new System.Drawing.Point(147, 6);
+            comboHeap.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboHeap.Name = "comboHeap";
+            comboHeap.Size = new System.Drawing.Size(289, 23);
+            comboHeap.TabIndex = 1;
+            comboHeap.SelectedIndexChanged += comboHeap_SelectedIndexChanged;
+            // 
+            // lHeapsizes
+            // 
+            lHeapsizes.AutoSize = true;
+            lHeapsizes.Location = new System.Drawing.Point(9, 9);
+            lHeapsizes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lHeapsizes.Name = "lHeapsizes";
+            lHeapsizes.Size = new System.Drawing.Size(120, 15);
+            lHeapsizes.TabIndex = 0;
+            lHeapsizes.Text = "Display Heap Sizes in:";
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 357);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.btnApply);
-            this.Controls.Add(this.btnCancel);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Settings";
-            this.ShowIcon = false;
-            this.Text = "Settings";
-            this.Load += new System.EventHandler(this.Settings_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.saSettings.ResumeLayout(false);
-            this.saSettings.PerformLayout();
-            this.sdSettings.ResumeLayout(false);
-            this.sdSettings.PerformLayout();
-            this.inSettings.ResumeLayout(false);
-            this.inSettings.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(455, 412);
+            Controls.Add(tabControl1);
+            Controls.Add(btnOk);
+            Controls.Add(btnApply);
+            Controls.Add(btnCancel);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Settings";
+            ShowIcon = false;
+            Text = "Settings";
+            Load += Settings_Load;
+            tabControl1.ResumeLayout(false);
+            saSettings.ResumeLayout(false);
+            saSettings.PerformLayout();
+            sdSettings.ResumeLayout(false);
+            sdSettings.PerformLayout();
+            inSettings.ResumeLayout(false);
+            inSettings.PerformLayout();
+            ResumeLayout(false);
 
         }
 
@@ -301,5 +326,6 @@
         private System.Windows.Forms.TabPage inSettings;
         private System.Windows.Forms.ComboBox comboHeap;
         private System.Windows.Forms.Label lHeapsizes;
+        private System.Windows.Forms.CheckBox virtualPiano;
     }
 }
