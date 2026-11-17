@@ -75,7 +75,7 @@ namespace NitroStudio2.Dialogs.Editors {
         /// Initialize the editor.
         /// </summary>
         public void Init() {
-            Player = new GotaSoundIO.Sound.Playback.StreamPlayer(Config.Settings["outputWaveDevice"]);
+            Player = new GotaSoundIO.Sound.Playback.StreamPlayer();
             Icon = Properties.Resources.War;
             tree.Nodes.RemoveAt(0);
             tree.Nodes.Add("root", "Wave Archive", 5, 5);
