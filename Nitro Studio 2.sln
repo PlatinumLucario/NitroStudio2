@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstallerFolderPermissions"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanford.Multimedia.Midi.Core", "Sanford.Multimedia.Midi.Core\Sanford.Multimedia.Midi.Core.csproj", "{99C0F98D-56CE-4AE7-9514-551DCE3B1944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitro Studio 2X - WinForms", "Nitro Studio 2 - WinForms\Nitro Studio 2X - WinForms.csproj", "{A0AAFA5B-3A2F-5DBF-8618-2F35454125C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitro Studio 2X - WinForms", "Nitro Studio 2X - WinForms\Nitro Studio 2X - WinForms.csproj", "{A0AAFA5B-3A2F-5DBF-8618-2F35454125C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GotaSoundBank", "GotaSoundBank\GotaSoundBank.csproj", "{DBB4184C-1CFF-CE7B-59AE-55D591129417}"
 EndProject
