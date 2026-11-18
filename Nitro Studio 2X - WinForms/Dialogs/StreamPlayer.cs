@@ -23,7 +23,7 @@ namespace NitroStudio2 {
         string File;
         static Configuration Config = new Configuration();
         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-        GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer();
+        GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer(Global.c.Settings["outputWaveDevice"]);
 
         public StreamPlayer(MainWindow m, string stream, string name)
         {

@@ -119,8 +119,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Melanchall.DryWetMidi" Version="8.0.3" />
-    <PackageReference Include="NAudio" Version="3.0.1" />
-    <PackageReference Include="Scintilla5.NET" Version="5.6.4" />
+    <PackageReference Include="NAudio" Version="3.3.0" />
+    <PackageReference Include="Scintilla5.NET" Version="7.1.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GotaSequenceLib\GotaSequenceLib.csproj" />

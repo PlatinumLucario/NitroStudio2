@@ -29,7 +29,7 @@ namespace NitroStudio2 {
         /// <summary>
         /// Player.
         /// </summary>
-        public GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer();
+        public GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer(Global.c.Settings["outputWaveDevice"]);
 
         /// <summary>
         /// Bank importer.
