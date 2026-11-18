@@ -80,7 +80,6 @@ namespace NitroFileLoader {
         public RiffWave[] GetWaves() {
             RiffWave[] w = new RiffWave[Waves.Count];
             for (int i = 0; i < Waves.Count; i++) {
-                Debug.WriteLine(Waves[i].PreferredEncoding());
                 w[i] = new RiffWave();
                 w[i].FromOtherStreamFile(Waves[i]);
             }
