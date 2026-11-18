@@ -6,9 +6,7 @@ Nitro Studio 2X aims to exist as a improved version of Nitro Studio 2 Deluxe, wi
 * [Full Release List](https://github.com/PokeAlia/NitroStudio2X/releases) - Includes ***experimental versions***
 
 # Dependencies
-This tool requires PlatinumLucario's modern forks of the following libraries:
+This tool requires the following libraries:
 * [GotaSequenceLib](https://github.com/NitroStudio2X/GotaSoundBank)
 * [GotaSoundBank](https://github.com/NitroStudio2X/GotaSoundBank)
 * [GotaSoundIO](https://github.com/NitroStudio2X/GotaSoundIO/)
-* [SoundFont2](https://github.com/PlatinumLucario/SoundFont2)
-* [DLS2](https://github.com/PlatinumLucario/DLS2/)
