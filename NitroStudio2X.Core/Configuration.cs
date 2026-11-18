@@ -24,6 +24,7 @@ namespace NitroStudio2X.Core
             { "outputWaveDevice", ConfigurationDefaults.GetDefaultWaveDevice()},
             { "viewHeap", "hex"},
             { "showVirtualPiano", "true" },
+
         };
 
         public void ReadConfig(StreamReader r)

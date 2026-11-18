@@ -68,6 +68,7 @@ namespace NitroStudio2.Dialogs.Editors
         {
             Init();
             Text = "Nitro Studio 2X";
+            newToolStripMenuItem_Click(this, new EventArgs());
         }
 
         /// <summary>

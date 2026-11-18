@@ -625,7 +625,7 @@ namespace NitroStudio2.Dialogs.Editors
         {
             components = new Container();
             ComponentResourceManager resources = new ComponentResourceManager(typeof(EditorBase));
-            TreeNode treeNode1 = new TreeNode("File Information", 10, 10);
+            TreeNode treeNode2 = new TreeNode("File Information", 10, 10);
             menuStrip = new MenuStrip();
             fileMenu = new ToolStripMenuItem();
             newToolStripMenuItem = new ToolStripMenuItem();
@@ -4016,11 +4016,11 @@ namespace NitroStudio2.Dialogs.Editors
             tree.Indent = 12;
             tree.Location = new Point(0, 0);
             tree.Name = "tree";
-            treeNode1.ImageIndex = 10;
-            treeNode1.Name = "fileInfo";
-            treeNode1.SelectedImageIndex = 10;
-            treeNode1.Text = "File Information";
-            tree.Nodes.AddRange(new TreeNode[] { treeNode1 });
+            treeNode2.ImageIndex = 10;
+            treeNode2.Name = "fileInfo";
+            treeNode2.SelectedImageIndex = 10;
+            treeNode2.Text = "File Information";
+            tree.Nodes.AddRange(new TreeNode[] { treeNode2 });
             tree.SelectedImageIndex = 0;
             tree.ShowLines = false;
             tree.Size = new Size(648, 528);
