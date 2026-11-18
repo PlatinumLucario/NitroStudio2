@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NitroStudio2X.Core;
 
 namespace NitroStudio2
 {
@@ -28,7 +29,7 @@ namespace NitroStudio2
         }
 
         private void AboutWindow_Load(object sender, EventArgs e) {
-            textBox1.Text += "Version: " + Functions.Global.version;
+            textBox1.Text += "Version: " + Global.version;
         }
 
     }

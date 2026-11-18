@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NitroStudio2X.Core;
 using InstrumentType = NitroFileLoader.InstrumentType;
 
 namespace NitroStudio2 {
@@ -43,14 +44,14 @@ namespace NitroStudio2 {
         /// Mixer.
         /// </summary>
         public Mixer Mixer;
-        private Functions.Configuration Config;
+        private Configuration Config;
 
         /// <summary>
         /// New bank generator.
         /// </summary>
         public BankGenerator(MainWindow m) {
             InitializeComponent();
-            Config = new Functions.Configuration();
+            Config = new Configuration();
             Mixer = new GotaSequenceLib.Playback.Mixer(Config.Settings["outputWaveDevice"]);
             MainWindow = m;
             if (SA.Banks.Where(x => x.File.Instruments.Count > 0).Count() < 1) {

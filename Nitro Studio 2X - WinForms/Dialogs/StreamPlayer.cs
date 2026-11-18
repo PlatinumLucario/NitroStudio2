@@ -3,7 +3,7 @@ using NAudio.CoreAudioApi;
 using NAudio.Wave;
 using NitroFileLoader;
 using NitroStudio2.Dialogs.Editors;
-using NitroStudio2.Functions;
+using NitroStudio2X.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

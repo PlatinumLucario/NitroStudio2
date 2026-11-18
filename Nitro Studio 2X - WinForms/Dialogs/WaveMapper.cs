@@ -1,6 +1,6 @@
 ﻿using GotaSoundIO.Sound;
 using NitroFileLoader;
-using NitroStudio2.Functions;
+using NitroStudio2X.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

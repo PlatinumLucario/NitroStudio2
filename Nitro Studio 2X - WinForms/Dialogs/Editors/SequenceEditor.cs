@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NitroStudio2X.Core;
 using static GotaSequenceLib.Playback.Player;
 
 namespace NitroStudio2.Dialogs.Editors
@@ -34,7 +35,7 @@ namespace NitroStudio2.Dialogs.Editors
         private FindReplace MyFindReplace;
         public bool PositionBarFree = true;
         public Timer Timer = new Timer();
-        private Functions.Configuration Config = new Functions.Configuration();
+        private Configuration Config = new Configuration();
 
         /// <summary>
         /// Create a new sequence editor.
@@ -42,7 +43,7 @@ namespace NitroStudio2.Dialogs.Editors
         /// <param name="mainWindow">The main window.</param>
         public SequenceEditor(MainWindow mainWindow) : base(typeof(Sequence), "Sequence", "seq", "Sequence Editor", mainWindow) {
             Init();
-            Config = new Functions.Configuration();
+            Config = new Configuration();
             Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
             LoadSequenceText();
         }

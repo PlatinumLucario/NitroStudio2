@@ -126,6 +126,7 @@
     <ProjectReference Include="..\GotaSequenceLib\GotaSequenceLib.csproj" />
     <ProjectReference Include="..\GotaSoundIO\GotaSoundIO.csproj" />
     <ProjectReference Include="..\NitroFileLoader\NitroFileLoader.csproj" />
+    <ProjectReference Include="..\NitroStudio2X.Core\NitroStudio2X.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Properties\Settings.settings">

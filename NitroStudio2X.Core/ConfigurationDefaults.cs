@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NitroStudio2.Functions
+namespace NitroStudio2X.Core
 {
     public static class ConfigurationDefaults
     {

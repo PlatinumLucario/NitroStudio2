@@ -7,7 +7,7 @@ using GotaSoundIO.Sound;
 using Microsoft.VisualBasic;
 using NAudio.CoreAudioApi;
 using NitroFileLoader;
-using NitroStudio2.Functions;
+using NitroStudio2X.Core;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,7 +29,7 @@ namespace NitroStudio2.Dialogs.Editors
         /// </summary>
         public static string NitroPath = Application.StartupPath;
 
-        private Functions.Configuration Config;
+        private Configuration Config;
 
         /// <summary>
         /// The sound archive.
@@ -655,7 +655,7 @@ namespace NitroStudio2.Dialogs.Editors
 
             if (SA != null)
             {
-                if (Functions.Global.c.Settings["writeNames"].ToLower() == "true")
+                if (Global.c.Settings["writeNames"].ToLower() == "true")
                 {
                     SA.SaveSymbols = true;
                 }
@@ -2738,7 +2738,7 @@ namespace NitroStudio2.Dialogs.Editors
 
                     //MIDI.
                     case ".mid":
-                        switch (Functions.Global.c.Settings["importTool"])
+                        switch (Global.c.Settings["importTool"])
                         {
 
                             //Nitro Studio.
@@ -2852,7 +2852,7 @@ namespace NitroStudio2.Dialogs.Editors
                     //SWLS
                     case ".swls":
                         SA.WaveArchives.Where(x => x.Index == ind).FirstOrDefault().File = new WaveArchive();
-                        SA.WaveArchives.Where(x => x.Index == ind).FirstOrDefault().File = Functions.Builders.WaveFromSwls(o.FileName);
+                        SA.WaveArchives.Where(x => x.Index == ind).FirstOrDefault().File = Builders.WaveFromSwls(o.FileName);
                         DoInfoStuff();
                         break;
 
@@ -2981,7 +2981,7 @@ namespace NitroStudio2.Dialogs.Editors
                     case ".mid":
                         if (tree.SelectedNode.Parent.Parent == null)
                         {
-                            switch (Functions.Global.c.Settings["exportTool"])
+                            switch (Global.c.Settings["exportTool"])
                             {
 
                                 //Nitro Studio.

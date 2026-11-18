@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NitroStudio2X.Core;
 
 namespace NitroStudio2 {
     static class Program {
@@ -31,19 +32,19 @@ namespace NitroStudio2 {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Functions.Global.c = new Functions.Configuration();
-            if(!Functions.Global.c.Settings.ContainsKey("associated_files"))
+            Global.c = new Configuration();
+            if(!Global.c.Settings.ContainsKey("associated_files"))
             {
                 var r = MessageBox.Show("Would you like to associate the 'SDAT' format to Nitro Studio 2X?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(r == DialogResult.Yes) {
-                    Functions.Utilities.SetAssociation(".sdat", Application.StartupPath + "Nitro Studio 2X.exe");
-                    Functions.Global.c.Settings["associated_files"] = "true";
+                    Utilities.SetAssociation(".sdat", Application.StartupPath + "Nitro Studio 2X.exe");
+                    Global.c.Settings["associated_files"] = "true";
                 } else
                 {
-                    Functions.Global.c.Settings["associated_files"] = "false";
+                    Global.c.Settings["associated_files"] = "false";
                 }
             }
-            Functions.Global.c.WriteConfig();
+            Global.c.WriteConfig();
 
             try
             {

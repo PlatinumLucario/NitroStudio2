@@ -1,15 +1,15 @@
 ﻿using GotaSoundIO.Sound;
 using NitroFileLoader;
-using ScintillaNET;
+// using ScintillaNET;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+// using System.Windows.Forms;
 
-namespace NitroStudio2.Functions
+namespace NitroStudio2X.Core
 {
     public static class Builders
     {

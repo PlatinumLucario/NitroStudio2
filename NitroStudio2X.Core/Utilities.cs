@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace NitroStudio2.Functions
+namespace NitroStudio2X.Core
 {
     public static class Utilities
     {

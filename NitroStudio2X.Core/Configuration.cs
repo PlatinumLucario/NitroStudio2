@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
+// using System.Windows.Forms;
 
-namespace NitroStudio2.Functions
+namespace NitroStudio2X.Core
 {
     public static class Global
     {

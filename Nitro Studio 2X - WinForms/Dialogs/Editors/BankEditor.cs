@@ -4,7 +4,7 @@ using GotaSoundIO.Sound;
 using NAudio.Midi;
 using NitroFileLoader;
 using NitroStudio2.Formats;
-using NitroStudio2.Functions;
+using NitroStudio2X.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +29,7 @@ namespace NitroStudio2.Dialogs.Editors
         /// </summary>
         public Bank BK => File as Bank;
 
-        private Functions.Configuration Config = new Configuration();
+        private Configuration Config = new Configuration();
 
         /// <summary>
         /// Mixer.

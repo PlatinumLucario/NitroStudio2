@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NitroStudio2X.Core;
 using static GotaSequenceLib.Playback.Player;
 
 namespace NitroStudio2.Dialogs.Editors
@@ -26,7 +27,7 @@ namespace NitroStudio2.Dialogs.Editors
 
         public Player Player;
         public Mixer Mixer;
-        private Functions.Configuration Config = new Functions.Configuration();
+        private Configuration Config = new Configuration();
         private const int BACK_COLOR = 0x2F2F2F;
         private const int FORE_COLOR = 0xB7B7B7;
         public SequenceArchive SA => File as SequenceArchive;
@@ -73,7 +74,7 @@ namespace NitroStudio2.Dialogs.Editors
         /// Init.
         /// </summary>
         public void Init() {
-            Config = new Functions.Configuration();
+            Config = new Configuration();
             Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
             Player = new Player(Mixer);
             Icon = Properties.Resources.Seq;

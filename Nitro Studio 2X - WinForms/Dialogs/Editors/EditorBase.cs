@@ -5,7 +5,7 @@ using GotaSoundIO.IO;
 // using Multimedia.UI;
 using NitroFileLoader;
 using NitroStudio2.Controls;
-using NitroStudio2.Functions;
+using NitroStudio2X.Core;
 using ScintillaNET;
 using System;
 using System.Collections.Generic;
@@ -5506,7 +5506,7 @@ namespace NitroStudio2.Dialogs.Editors
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-            DialogResult r = new Settings(Functions.Global.c).ShowDialog();
+            DialogResult r = new Settings(Global.c).ShowDialog();
         }
 
 

@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NitroStudio2X.Core;
 using System.Windows.Forms;
 
 namespace NitroStudio2 {
@@ -33,7 +34,7 @@ namespace NitroStudio2 {
         /// Mixer.
         /// </summary>
         public Mixer Mixer;
-        private Functions.Configuration Config = new Functions.Configuration();
+        private Configuration Config = new Configuration();
 
         /// <summary>
         /// Bank importer.

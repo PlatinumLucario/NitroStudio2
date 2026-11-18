@@ -1,7 +1,7 @@
 ﻿using NAudio.CoreAudioApi;
 using NAudio.Midi;
 using NAudio.Wave;
-using NitroStudio2.Functions;
+using NitroStudio2X.Core;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -44,24 +44,24 @@ namespace NitroStudio2
         private void btnApply_Click(object sender, EventArgs e)
         {
             btnOk.Enabled = true;
-            Functions.Global.c.Settings["importTool"] = comboImport.Text.Replace(" ", "");
-            Functions.Global.c.Settings["exportTool"] = comboExport.Text.Replace(" ", "");
-            Functions.Global.c.Settings["writeNames"] = writeNames.Checked.ToString();
+            Global.c.Settings["importTool"] = comboImport.Text.Replace(" ", "");
+            Global.c.Settings["exportTool"] = comboExport.Text.Replace(" ", "");
+            Global.c.Settings["writeNames"] = writeNames.Checked.ToString();
 
-            Functions.Global.c.Settings["inputMidiDevice"] = cbMidiInput.SelectedIndex.ToString();
-            Functions.Global.c.Settings["outputWaveDevice"] = devices[cbWaveOutput.SelectedIndex];
+            Global.c.Settings["inputMidiDevice"] = cbMidiInput.SelectedIndex.ToString();
+            Global.c.Settings["outputWaveDevice"] = devices[cbWaveOutput.SelectedIndex];
 
             if (comboHeap.SelectedIndex == 0)
             {
-                Functions.Global.c.Settings["viewHeap"] = "hex";
+                Global.c.Settings["viewHeap"] = "hex";
             }
             else
             {
-                Functions.Global.c.Settings["viewHeap"] = "dec";
+                Global.c.Settings["viewHeap"] = "dec";
             }
-            Functions.Global.c.Settings["showVirtualPiano"] = virtualPiano.Checked.ToString();
+            Global.c.Settings["showVirtualPiano"] = virtualPiano.Checked.ToString();
 
-            Functions.Global.c.WriteConfig();
+            Global.c.WriteConfig();
             btnApply.Enabled = false;
         }
 

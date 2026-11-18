@@ -3,7 +3,7 @@ using GotaSoundIO.Sound;
 using NAudio.CoreAudioApi;
 using NAudio.Wave;
 using NitroFileLoader;
-using NitroStudio2.Functions;
+using NitroStudio2X.Core;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,7 +32,7 @@ namespace NitroStudio2.Dialogs.Editors {
         /// </summary>
         public GotaSoundIO.Sound.Playback.StreamPlayer Player;
 
-        private Functions.Configuration Config = new Functions.Configuration();
+        private Configuration Config = new Configuration();
 
         /// <summary>
         /// Position bar free.

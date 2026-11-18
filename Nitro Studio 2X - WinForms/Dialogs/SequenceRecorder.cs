@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NitroStudio2X.Core;
 
 namespace NitroStudio2 {
     public partial class SequenceRecorder : Form {
@@ -39,7 +40,7 @@ namespace NitroStudio2 {
         /// File path.
         /// </summary>
         private string filePath;
-        private Functions.Configuration Config = new Functions.Configuration();
+        private Configuration Config = new Configuration();
 
         /// <summary>
         /// Create a new sequence recorder.
@@ -52,7 +53,7 @@ namespace NitroStudio2 {
 
             //Init.
             InitializeComponent();
-            Config = new Functions.Configuration();
+            Config = new Configuration();
             Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
             //Load stuff.
             Player = new Player(Mixer);
