@@ -32,20 +32,6 @@ namespace NitroStudio2 {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Global.c = new Configuration();
-            if(!Global.c.Settings.ContainsKey("associated_files"))
-            {
-                var r = MessageBox.Show("Would you like to associate the 'SDAT' format to Nitro Studio 2X?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if(r == DialogResult.Yes) {
-                    Utilities.SetAssociation(".sdat", Application.StartupPath + "Nitro Studio 2X.exe");
-                    Global.c.Settings["associated_files"] = "true";
-                } else
-                {
-                    Global.c.Settings["associated_files"] = "false";
-                }
-            }
-            Global.c.WriteConfig();
-
             try
             {
                 //Argument mode.
