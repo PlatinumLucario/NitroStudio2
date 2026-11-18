@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GotaSequenceLib", "GotaSequ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitroFileLoader", "NitroFileLoader\NitroFileLoader.csproj", "{A1B98CAC-1149-42F0-9925-C0E75F6CF5EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitroStudio2X.Core", "NitroStudio2X.Core\NitroStudio2X.Core.csproj", "{BA35039D-FBBD-425D-9A93-B08203917CD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,18 @@ Global
 		{A1B98CAC-1149-42F0-9925-C0E75F6CF5EE}.Release|x64.Build.0 = Release|Any CPU
 		{A1B98CAC-1149-42F0-9925-C0E75F6CF5EE}.Release|x86.ActiveCfg = Release|Any CPU
 		{A1B98CAC-1149-42F0-9925-C0E75F6CF5EE}.Release|x86.Build.0 = Release|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Debug|x64.Build.0 = Debug|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Debug|x86.Build.0 = Debug|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|x64.ActiveCfg = Release|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|x64.Build.0 = Release|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|x86.ActiveCfg = Release|Any CPU
+		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
