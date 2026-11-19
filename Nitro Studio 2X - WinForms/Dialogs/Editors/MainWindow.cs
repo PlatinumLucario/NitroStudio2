@@ -87,6 +87,8 @@ namespace NitroStudio2.Dialogs.Editors
         /// </summary>
         public void Init()
         {
+            // We want to ensure the SoundArchive method has it's system linked
+            // SA.LoadProgressUpdated += SA_LoadProgressUpdated;
 
             Config = new Configuration();
             Mixer = new Mixer(Config.Settings["outputWaveDevice"]);

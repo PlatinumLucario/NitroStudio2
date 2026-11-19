@@ -5,9 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace NitroStudio2.Formats {
+namespace NitroStudio2X.Core.Formats {
 
     /// <summary>
     /// Nitro Studio Instrument.
@@ -46,7 +45,7 @@ namespace NitroStudio2.Formats {
 
             //Placeholder.
             if (r.ReadBoolean()) {
-                MessageBox.Show("An empty instrument cannot be used!");
+                throw new InvalidDataException("Instrument Data cannot be empty!");
                 return;
             }
 

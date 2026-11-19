@@ -5,6 +5,7 @@ using NAudio.Midi;
 using NitroFileLoader;
 using NitroStudio2.Formats;
 using NitroStudio2X.Core;
+using NitroStudio2X.Core.Formats;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
