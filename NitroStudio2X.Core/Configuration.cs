@@ -26,6 +26,37 @@ namespace NitroStudio2X.Core
             }
             return path;
         }
+
+        public static string WriteStackTraceLog(Exception e)
+        {
+            string path = "";
+            DateTime t = DateTime.Now;
+            string time = t.Year + "-" + t.Month + "-" + t.Day + " " + t.Hour + "." + t.Minute + "-" + t.Second;
+            if (OperatingSystem.IsWindows())
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NitroStudio2\\Logs\\";
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\NitroStudio2\\Logs\\";
+            }
+            if(!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            File.WriteAllLines(path + time + ".log", new string[]
+            {
+                "Time of Exception: " + t,
+                "NitroStudio2X Version: " + Global.version,
+                "Type: " + e.GetType(),
+                "Message: " + e.Message,
+                "OS: " + System.Environment.OSVersion,
+                "Runtime: " + System.Environment.Version,
+                "\nStack Trace: \n" + e.StackTrace
+            });
+            return path + time + ".log";
+        }
+
         public Dictionary<string, string> Settings = new Dictionary<string, string> {
             { "version", Global.version},
             { "writeNames", "true" },

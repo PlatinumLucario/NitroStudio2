@@ -83,7 +83,7 @@ namespace NitroStudio2 {
                 }
                 else
                 {
-
+                    throw new Exception("Test");
                     //Start the editor.
                     Application.Run(new MainWindow());
 
@@ -91,7 +91,7 @@ namespace NitroStudio2 {
             }
             catch (Exception e)
             {
-                if (MessageBox.Show("An exception has occurred, and Nitro Studio 2X will need to close.\nType: " + e.GetType() + "\n\nMessage:\n" + e.Message + "\n\nIf you would like to report this to our GitHub, click on 'Yes'.\n\n" + e.StackTrace, "Exception Handler", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
+                if (MessageBox.Show("An exception has occurred, and Nitro Studio 2X will need to close.\nType: " + e.GetType() + "\n\nMessage:\n" + e.Message + "\n\nIf you would like to report this to our GitHub, click on 'Yes'.\n\nA stack trace log has been made at " + NitroStudio2X.Core.Configuration.WriteStackTraceLog(e), "Exception Handler", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
                 {
                     Process p = new Process();
                     p.StartInfo.UseShellExecute = true;
