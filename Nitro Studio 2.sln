@@ -11,13 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitro Studio 2X - WinForms"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GotaSoundBank", "GotaSoundBank\GotaSoundBank.csproj", "{DBB4184C-1CFF-CE7B-59AE-55D591129417}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GotaSoundIO", "GotaSoundIO\GotaSoundIO.csproj", "{90201A61-6D21-13D1-358D-F9789FB1FDB1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GotaSequenceLib", "GotaSequenceLib\GotaSequenceLib.csproj", "{852D9D8F-237E-111E-FAE6-03EF2F43A124}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitroFileLoader", "NitroFileLoader\NitroFileLoader.csproj", "{A1B98CAC-1149-42F0-9925-C0E75F6CF5EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitroStudio2X.Core", "NitroStudio2X.Core\NitroStudio2X.Core.csproj", "{BA35039D-FBBD-425D-9A93-B08203917CD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GotaSoundIO", "GotaSoundIO\GotaSoundIO.csproj", "{90201A61-6D21-13D1-358D-F9789FB1FDB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,18 +77,6 @@ Global
 		{DBB4184C-1CFF-CE7B-59AE-55D591129417}.Release|x64.Build.0 = Release|Any CPU
 		{DBB4184C-1CFF-CE7B-59AE-55D591129417}.Release|x86.ActiveCfg = Release|Any CPU
 		{DBB4184C-1CFF-CE7B-59AE-55D591129417}.Release|x86.Build.0 = Release|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|x64.Build.0 = Debug|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|x86.Build.0 = Debug|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|x64.ActiveCfg = Release|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|x64.Build.0 = Release|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|x86.ActiveCfg = Release|Any CPU
-		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|x86.Build.0 = Release|Any CPU
 		{852D9D8F-237E-111E-FAE6-03EF2F43A124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{852D9D8F-237E-111E-FAE6-03EF2F43A124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{852D9D8F-237E-111E-FAE6-03EF2F43A124}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -125,6 +113,18 @@ Global
 		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|x64.Build.0 = Release|Any CPU
 		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|x86.ActiveCfg = Release|Any CPU
 		{BA35039D-FBBD-425D-9A93-B08203917CD9}.Release|x86.Build.0 = Release|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|x64.Build.0 = Debug|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Debug|x86.Build.0 = Debug|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|x64.ActiveCfg = Release|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|x64.Build.0 = Release|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|x86.ActiveCfg = Release|Any CPU
+		{90201A61-6D21-13D1-358D-F9789FB1FDB1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

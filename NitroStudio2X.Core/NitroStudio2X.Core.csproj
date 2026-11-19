@@ -13,7 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\GotaSequenceLib\GotaSequenceLib.csproj" />
     <ProjectReference Include="..\GotaSoundBank\GotaSoundBank.csproj" />
-    <ProjectReference Include="..\GotaSoundIO\GotaSoundIO.csproj" />
     <ProjectReference Include="..\NitroFileLoader\NitroFileLoader.csproj" />
   </ItemGroup>
 
