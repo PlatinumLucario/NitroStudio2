@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NitroStudio2X.Core;
+using System.Xml;
 
 namespace NitroStudio2 {
     static class Program {
@@ -90,7 +91,7 @@ namespace NitroStudio2 {
             }
             catch (Exception e)
             {
-                if (MessageBox.Show("An exception has occurred, and Nitro Studio 2X will need to close.\nType: " + e.GetType() + "\n\nMessage:\n" + e.Message + "\n\nIf you would like to report this to our GitHub, click on 'Yes'.", "Exception Handler", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
+                if (MessageBox.Show("An exception has occurred, and Nitro Studio 2X will need to close.\nType: " + e.GetType() + "\n\nMessage:\n" + e.Message + "\n\nIf you would like to report this to our GitHub, click on 'Yes'.\n\n" + e.StackTrace, "Exception Handler", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
                 {
                     Process p = new Process();
                     p.StartInfo.UseShellExecute = true;

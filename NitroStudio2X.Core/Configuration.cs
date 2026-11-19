@@ -14,7 +14,18 @@ namespace NitroStudio2X.Core
     }
     public class Configuration
     {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NitroStudio2\\config.ini";
+        string GetConfigPath()
+        {
+            string path = "";
+            if(OperatingSystem.IsWindows())
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NitroStudio2\\config.ini";
+            } else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\NitroStudio2\\config.ini";
+            }
+            return path;
+        }
         public Dictionary<string, string> Settings = new Dictionary<string, string> {
             { "version", Global.version},
             { "writeNames", "true" },
@@ -32,7 +43,7 @@ namespace NitroStudio2X.Core
             if (r.ReadLine() == "[NitroStudio2]")
             {
                 r.Close();
-                foreach (string l in File.ReadAllLines(path))
+                foreach (string l in File.ReadAllLines(GetConfigPath()))
                 {
                     if (l != "[NitroStudio2]")
                     {
@@ -79,11 +90,11 @@ namespace NitroStudio2X.Core
 
         public void WriteConfig()
         {
-            if (!Directory.Exists(path.Replace("\\config.ini", "")))
+            if (!Directory.Exists(GetConfigPath().Replace("\\config.ini", "")))
             {
-                Directory.CreateDirectory(path.Replace("\\config.ini", ""));
+                Directory.CreateDirectory(GetConfigPath().Replace("\\config.ini", ""));
             }
-            using (StreamWriter w = new StreamWriter(path))
+            using (StreamWriter w = new StreamWriter(GetConfigPath()))
             {
                 w.WriteLine("[NitroStudio2]");
                 foreach (var s in Settings.Keys)
@@ -95,9 +106,9 @@ namespace NitroStudio2X.Core
 
         public Configuration()
         {
-            if (File.Exists(path))
+            if (File.Exists(GetConfigPath()))
             {
-                ReadConfig(new StreamReader(path));
+                ReadConfig(new StreamReader(GetConfigPath()));
             }
             else
             {
