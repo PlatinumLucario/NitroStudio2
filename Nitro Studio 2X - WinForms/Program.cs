@@ -83,7 +83,6 @@ namespace NitroStudio2 {
                 }
                 else
                 {
-                    throw new Exception("Test");
                     //Start the editor.
                     Application.Run(new MainWindow());
 
