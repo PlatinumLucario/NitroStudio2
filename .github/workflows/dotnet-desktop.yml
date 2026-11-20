@@ -67,9 +67,9 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Clone Other Libraries
-    - name: Grab dependencies
-      run: git clone https://github.com/NitroStudio2X/GotaSoundIO && git clone https://github.com/NitroStudio2X/GotaSequenceLib && git clone https://github.com/NitroStudio2X/GotaSoundBank 
+    # Initialize the submodules of dependencies
+    - name: Initalize dependency submodules
+      run: git submodule update --init --recursive 
     
     # Install the .NET Core workload
     - name: Install .NET Core
