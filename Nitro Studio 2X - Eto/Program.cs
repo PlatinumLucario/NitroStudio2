@@ -13,7 +13,7 @@ namespace Nitro_Studio_2X___Eto
             // Wpf doesn't follow the system light/dark theme unless asked to
             if (app.Platform.IsWpf)
                 app.Theme = Themes.System;
-            app.Run(new MainForm());
+            // app.Run(new MainForm());
         }
     }
 }
