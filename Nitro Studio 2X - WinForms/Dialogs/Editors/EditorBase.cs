@@ -66,6 +66,11 @@ namespace NitroStudio2.Dialogs.Editors
         public bool FileOpen;
 
         /// <summary>
+        /// Has the file been changed?
+        /// </summary>
+        public bool FileChanged;
+
+        /// <summary>
         /// File type.
         /// </summary>
         public Type FileType;
@@ -511,6 +516,7 @@ namespace NitroStudio2.Dialogs.Editors
             FilePath = fileToOpen;
             Text = EditorName + " - " + Path.GetFileName(fileToOpen);
             FileOpen = true;
+            FileChanged = false;
             FileName = Path.GetFileNameWithoutExtension(FilePath);
 
             //Read data.
@@ -565,6 +571,7 @@ namespace NitroStudio2.Dialogs.Editors
             }
             Text = EditorName + " - " + name + ".s" + extension;
             FileOpen = true;
+            FileChanged = false;
             FileName = fileName;
 
             //Update.
@@ -5747,6 +5754,7 @@ namespace NitroStudio2.Dialogs.Editors
             //Reset values.
             FilePath = "";
             FileOpen = true;
+            FileChanged = false;
             ExtFile = null;
             Text = EditorName + " - New " + ExtensionDescription + ".s" + Extension;
 
@@ -5779,6 +5787,7 @@ namespace NitroStudio2.Dialogs.Editors
                 FilePath = path;
                 Text = EditorName + " - " + Path.GetFileName(path);
                 FileOpen = true;
+                FileChanged = false;
 
                 //Read data.
                 File.Read(path);
@@ -5832,6 +5841,7 @@ namespace NitroStudio2.Dialogs.Editors
                     OtherEditor.DoInfoStuff();
                 }
 
+                FileChanged = false;
             }
 
             //External file is null.
@@ -5904,24 +5914,27 @@ namespace NitroStudio2.Dialogs.Editors
             //Quit if wanted.
             if (FileOpen)
             {
-                //Ask user if they want to save.
-                DialogResult r = MessageBox.Show("Do you want to save before you exit?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                switch (r)
+                if (FileChanged)
                 {
+                    //Ask user if they want to save.
+                    DialogResult r = MessageBox.Show("Do you want to save before you exit?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    switch (r)
+                    {
 
-                    //Save.
-                    case DialogResult.Yes:
-                        saveToolStripMenuItem_Click(sender, e);
-                        break;
+                        //Save.
+                        case DialogResult.Yes:
+                            saveToolStripMenuItem_Click(sender, e);
+                            break;
 
-                    //No button.
-                    case DialogResult.No:
-                        break;
+                        //No button.
+                        case DialogResult.No:
+                            break;
 
-                    //Cancel.
-                    default:
-                        break;
+                        //Cancel.
+                        default:
+                            break;
 
+                    }
                 }
                 Close();
             }

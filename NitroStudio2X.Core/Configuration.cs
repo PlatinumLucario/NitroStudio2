@@ -9,7 +9,7 @@ namespace NitroStudio2X.Core
 {
     public static class Global
     {
-        public static string version = "27.01-beta1";
+        public static string version = "27.01-beta2";
         public static Configuration c = new Configuration();
     }
     public class Configuration
