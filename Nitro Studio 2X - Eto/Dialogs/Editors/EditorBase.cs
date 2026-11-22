@@ -1,12 +1,80 @@
-using System;
-using Eto.Forms;
 using Eto.Drawing;
+using Eto.Forms;
+using GotaSoundIO.IO;
+using NitroStudio2X.Core;
+using System;
+using System.ComponentModel;
 
-namespace Nitro_Studio_2X___Eto.Dialogs.Editors
+namespace NitroStudio2X.Dialogs.Editors
 {
-	public partial class EditorBase : Form
+    /// <summary>
+    /// An editor base for files.
+    /// </summary>
+    [TypeDescriptionProvider(typeof(AbstractCommunicatorProvider))]
+    public abstract class EditorBase : Form
 	{
-		public EditorBase()
+        /// <summary>
+        /// File type to use.
+        /// </summary>
+        public IOFile File;
+
+        /// <summary>
+        /// External file.
+        /// </summary>
+        public IOFile ExtFile;
+
+        /// <summary>
+        /// File name.
+        /// </summary>
+        public string FileName;
+
+        /// <summary>
+        /// File path.
+        /// </summary>
+        public string FilePath;
+
+        /// <summary>
+        /// Description of the extension.
+        /// </summary>
+        public string ExtensionDescription;
+
+        /// <summary>
+        /// Extension of format.
+        /// </summary>
+        public string Extension;
+
+        /// <summary>
+        /// Editor name.
+        /// </summary>
+        public string EditorName;
+
+        /// <summary>
+        /// Current file open.
+        /// </summary>
+        public bool FileOpen;
+
+        /// <summary>
+        /// Has the file been changed?
+        /// </summary>
+        public bool FileChanged;
+
+        /// <summary>
+        /// File type.
+        /// </summary>
+        public Type FileType;
+
+        /// <summary>
+        /// Other editor.
+        /// </summary>
+        public EditorBase OtherEditor;
+
+        /// <summary>
+        /// Writing info.
+        /// </summary>
+        public bool WritingInfo;
+
+        public Configuration c = new Configuration();
+        public EditorBase()
 		{
 			Title = "My Eto Form";
 			MinimumSize = new Size(200, 200);
@@ -54,4 +122,19 @@ namespace Nitro_Studio_2X___Eto.Dialogs.Editors
 			ToolBar = new ToolBar { Items = { clickMe } };
 		}
 	}
+    public class AbstractCommunicatorProvider : TypeDescriptionProvider
+    {
+        public AbstractCommunicatorProvider() : base(TypeDescriptor.GetProvider(typeof(Control)))
+        {
+        }
+        public override Type GetReflectionType(Type objectType, object instance)
+        {
+            return typeof(Control);
+        }
+        public override object CreateInstance(IServiceProvider provider, Type objectType, Type[] argTypes, object[] args)
+        {
+            objectType = typeof(Control);
+            return base.CreateInstance(provider, objectType, argTypes, args);
+        }
+    }
 }

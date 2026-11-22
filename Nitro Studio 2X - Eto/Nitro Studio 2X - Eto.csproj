@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>Nitro_Studio_2X___Eto</RootNamespace>
+    <RootNamespace>NitroStudio2X</RootNamespace>
     <AssemblyName>Nitro Studio 2X</AssemblyName>
     <Nullable>enable</Nullable>
 
