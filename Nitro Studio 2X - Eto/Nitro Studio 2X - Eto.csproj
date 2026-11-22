@@ -1,0 +1,15 @@
+﻿<Project Sdk="Eto.Forms/2.13.0">
+
+  <!--
+    Set the BuildPlatform property to the Eto platform you wish to build for.
+    The default is the platform you are building on.
+    Valid values: Wpf, Windows, Mac64, MacOS, Gtk, Direct2D
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>Nitro_Studio_2X___Eto</RootNamespace>
+
+  </PropertyGroup>
+
+</Project>
