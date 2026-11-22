@@ -45,7 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dialogs\" />
     <Folder Include="Formats\" />
   </ItemGroup>
 
