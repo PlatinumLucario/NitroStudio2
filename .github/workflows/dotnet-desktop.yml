@@ -113,12 +113,12 @@ jobs:
     #   run: Remove-Item -path $env:Wap_Project_Directory\GitHubActionsWorkflow.pfx
 
     # Publish for Artifacting
-    - name: Build artifact
+    - name: Build Artifact for Windows (x64)
       run: dotnet build "${{ env.Test_Project_Path }}" --configuration Debug --os win --self-contained true
     
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: Windows x64 Nightly
+        name: Nitro Studio 2X - WinForms (Windows x64)
         path: ${{ env.ProjectOutputPath }}
