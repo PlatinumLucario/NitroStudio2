@@ -1,4 +1,5 @@
 # Nitro Studio 2X
+[![.NET Core Desktop](https://github.com/NitroStudio2X/NitroStudio2X/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/NitroStudio2X/NitroStudio2X/actions/workflows/dotnet-desktop.yml)
 Nitro Studio 2X aims to exist as a improved version of Nitro Studio 2 Deluxe, with heavy under-the-hood fixes, more QOL features, and eventually move away from WinForms.
 
 ## Downloads
@@ -10,3 +11,4 @@ This tool requires the following libraries:
 * [GotaSequenceLib](https://github.com/NitroStudio2X/GotaSoundBank)
 * [GotaSoundBank](https://github.com/NitroStudio2X/GotaSoundBank)
 * [GotaSoundIO](https://github.com/NitroStudio2X/GotaSoundIO/)
+
