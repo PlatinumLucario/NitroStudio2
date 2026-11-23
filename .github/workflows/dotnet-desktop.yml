@@ -113,8 +113,8 @@ jobs:
     #   run: Remove-Item -path $env:Wap_Project_Directory\GitHubActionsWorkflow.pfx
 
     # Publish for Artifacting
-    - name: Publish
-      run: dotnet publish --configuration Debug --runtime win-x64 --self-contained true
+    - name: Build artifact
+      run: dotnet build --configuration Debug --runtime win-x64 --self-contained true
     
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
