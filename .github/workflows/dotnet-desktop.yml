@@ -58,7 +58,7 @@ jobs:
     env:
       Solution_Name: Nitro Studio 2.sln                        # Replace with your solution name, i.e. MyWpfApp.sln.
       ProjectOutputPath: Nitro Studio 2X - WinForms\bin\Debug\net9.0-windows
-      Test_Project_Path: Nitro Studio 2X - WinForms\Nitro Studio 2X - WInForms.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Test_Project_Path: Nitro Studio 2X - WinForms\Nitro Studio 2X - WinForms.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       Wap_Project_Directory: NitroStudio2X.Package    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
       Wap_Project_Path: NitroStudio2X.Package\NitroStudio2X.Package.wapproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
@@ -114,7 +114,7 @@ jobs:
 
     # Publish for Artifacting
     - name: Build artifact
-      run: dotnet build --configuration Debug --os win --self-contained true -r net9.0
+      run: dotnet build ${{ env.Test_Project_Path }} --configuration Debug --os win --self-contained true
     
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
