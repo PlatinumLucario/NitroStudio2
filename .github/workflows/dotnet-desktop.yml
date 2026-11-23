@@ -114,7 +114,7 @@ jobs:
 
     # Publish for Artifacting
     - name: Build artifact
-      run: dotnet build --configuration Debug --runtime win-x64 --self-contained true
+      run: dotnet build --configuration Debug --os win --self-contained true
     
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
